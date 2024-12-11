@@ -21,7 +21,7 @@ author: Sumukh Deshpande
 
 navbar-links:
   About Me: "aboutme"
-  RNAseq Course:
+  scRNAseq Course:
     - Home: "scrnaseq-course-home"
     - Pre-course: "scrnaseq-course-pre"
     - Day 1: "scrnaseq-course-d1"
