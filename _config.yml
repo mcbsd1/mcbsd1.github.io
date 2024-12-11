@@ -13,7 +13,7 @@
 title: My website
 
 # Your name to show in the footer
-author: Some Person
+author: Sumukh Deshpande
 
 ###############################################
 # --- List of links in the navigation bar --- #
@@ -21,10 +21,13 @@ author: Some Person
 
 navbar-links:
   About Me: "aboutme"
-  Resources:
-    - Beautiful Jekyll: "https://beautifuljekyll.com"
-    - Learn markdown: "https://www.markdowntutorial.com/"
-  Author's home: "https://deanattali.com"
+  RNAseq Course:
+    - Home: "scrnaseq-course-home"
+    - Pre-course: "scrnaseq-course-pre"
+    - Day 1: "scrnaseq-course-d1"
+    - Day 2: "scrnaseq-course-d2"
+    - Day 3: "scrnaseq-course-d3"
+    - Day 4: "scrnaseq-course-d4"
 
 ################
 # --- Logo --- #
@@ -100,7 +103,7 @@ share-links-active:
 
 # How to display the link to your website in the footer
 # Remove this if you don't want a link in the footer
-url-pretty: "MyWebsite.com"
+url-pretty: "codingworld.com"
 
 # Add the website title to the title of every page
 title-on-all-pages: true
