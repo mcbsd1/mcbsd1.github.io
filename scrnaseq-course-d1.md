@@ -64,7 +64,7 @@ You should have one of three questions:
 - For example, it can be used to characterise expression signatures between tissues in healthy/diseased, wild-type/mutant or control/treated samples.
 - However, with bulk RNA-seq we can only estimate the **average expression level** for each gene across a population of cells, without regard for the heterogeneity in gene expression across individual cells of that sample.
 
-<img src="singlecell-v.-bulk-image.jpg" alt="singlecell" width="1200"/> 
+<img src="/assets/img/singlecell-v.-bulk-image.jpg" alt="singlecell" width="1200"/> 
 
 
 - Unlike with the bulk approach, with scRNA-seq we can estimate a **distribution of expression levels** for each gene across a population of cells.
