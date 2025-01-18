@@ -120,7 +120,7 @@ Broadly speaking, a typical scRNA-seq protocol consists of the following steps (
 - **RAM (random access memory):** like the hard drive, it stores 
 information.  Access (reading this information) is faster than the hard drive, although information is only present whilst the compute is powered on, i.e. this is memory space.  
 
-<img src="/assets/img/unix-configuration.png" alt="configuration" width="800"/> 
+<img src="/assets/img/unix-configuration.png" alt="configuration" width="600"/> 
 
 ### Unix: Kernel
 
