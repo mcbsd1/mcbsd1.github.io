@@ -102,53 +102,61 @@ Broadly speaking, a typical scRNA-seq protocol consists of the following steps (
 
 - Carrying several downstream analysis (the focus of this course).
 
-
-
 ---
 
 <br>
 
 ---
-## Basic Unix: Learning Objectives
+## Unix: Configuration
 ---
 ---
 
-- Learn the concept of using the command line.
-- Learn how to navigate and manipulate files and data.
-- Learn how to run and manage programs.
+### Unix: Hardware
+
+
+- **Hardware:** the physical components (the bits you can see when you take the back off a computer.
+- **CPU (central processing unit):** the computer chip performing the calculations.  
+- **Hard drive:** saved storage – your saved files.
+- **RAM (random access memory):** like the hard drive, it stores 
+information.  Access (reading this information) is faster than the hard drive, although information is only present whilst the compute is powered on, i.e. this is memory space.  
+
+<img src="/assets/img/unix-configuration.png" alt="configuration" width="800"/> 
+
+### Unix: Kernel
+
+- The kernel sits between the command line and the hardware.  
+
+- When you type a command line to the screen and hit “enter,” the kernel executes the command, allocating the appropriate time and memory to the task.
+
+### Unix: Commands
+
+- the commands are the bread-and-butter functions common to all Linux installations and are part of the core (minimal) install.
+
+- they perform core processes such as file and job manipulations (read, write, delete files/jobs).
+
+### Unix: Programs
+
+- Other programs work identically to the core commands.
+
+- They are different because they generally perform specialised functions, for example, mapping next-generation sequence to a genome assembly.
+
 
 ---
 
 <br>
-
----
-## Basic Unix: Brief History
----
----
-
-- UNIX is a suite of programs that make up an operating system (like Windows and Mac).
-- First developed in 1960's and has been in constant development ever since.
-- It's a stable, multi-use, multi-tasking system for servers, desktops, and laptops.
-- UNIX systems also have a grahpical user interface (GUI), providing an easy to use Windows-like icon-based environment.
-- Linux is a clone of UNIX (they're the same thing). UNIX is a commercial product, whereas Linux is open-source (you can download, install, and use it).
-- We will be using Linux on this course.
-
----
-
-<br>
-
 ---
 ## Basic Unix: Graphical User Interface (GUI) & Command Line/Shell
 ---
 ---
 
 - All Windows/Mac/Linux PC's use a GUI to allow users to easily navigate and use the PC.
-- The GUI is what allows us to point and click on things, which in turn opens the respective programs etc.
-- These operations can also be performed using the command line through the use of a shell.
-
+- The GUI is common to Window/Mac/Linux.  
+- The interface permits you to access files and run commands/programs by clicking icon/apps, drag-and-drop.
 
 
 This is a shell. We can use this to type commands etc.
+
+<img src="/assets/img/gui.png" alt="gui" width="1200"/> 
 
 ---
 
