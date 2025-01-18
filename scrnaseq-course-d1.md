@@ -145,6 +145,7 @@ information.  Access (reading this information) is faster than the hard drive, a
 
 <br>
 ---
+
 ## Basic Unix: Graphical User Interface (GUI) & Command Line/Shell
 ---
 ---
@@ -157,6 +158,12 @@ information.  Access (reading this information) is faster than the hard drive, a
 This is a shell. We can use this to type commands etc.
 
 <img src="/assets/img/gui.png" alt="gui" width="1200"/> 
+
+In simple terms, the window on the computer into which you type a command, is called the shell
+
+<img src="/assets/img/gui1.png" alt="gui1" width="1200"/>
+
+
 
 ---
 
