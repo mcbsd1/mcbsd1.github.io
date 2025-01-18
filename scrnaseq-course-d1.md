@@ -163,6 +163,26 @@ In simple terms, the window on the computer into which you type a command, is ca
 
 <img src="/assets/img/gui1.png" alt="gui1" width="1200"/>
 
+---
+
+<br>
+---
+
+## Setup and Installation
+---
+---
+#### FILEZILLA
+
+Download Filezilla client for Mac/Windows
+
+1.
+<img src="/assets/img/filezilla-1.png" alt="gui1" width="1200"/>
+
+2.
+<img src="/assets/img/filezilla-2.png" alt="gui1" width="1200"/>
+
+3.
+<img src="/assets/img/filezilla-3.png" alt="gui1" width="1200"/>
 
 
 ---
