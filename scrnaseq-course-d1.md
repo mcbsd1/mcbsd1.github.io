@@ -184,11 +184,7 @@ Download Filezilla client for Mac/Windows
 3.
 <img src="/assets/img/filezilla-3.png" alt="gui1" width="1200"/>
 
-```
-knitr::asis_output("## This is a Heading in Code")
-summary(cars)
-knitr::kable(summary(cars))
-``` 
+
 
 
 
@@ -208,6 +204,11 @@ knitr::kable(summary(cars))
 - If we need to run analyses/softwares/code that requires a lot of computing power, we need to use HPC's.
 - The way we interact with HAWK is through the command line via Bash.
 - Think of HAWK as a computer that's located in the cloud. We can connect to it via out Unix shells - Terminal, MobaXterm, and FileZilla.
+
+#### HAWK Folder Structure
+
+<img src="/assets/img/hawk_folder_structure.png" alt="folderstr" width="1200"/>
+
 
 ---
 
