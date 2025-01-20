@@ -184,6 +184,14 @@ Download Filezilla client for Mac/Windows
 3.
 <img src="/assets/img/filezilla-3.png" alt="gui1" width="1200"/>
 
+```{r cars}
+knitr::asis_output("## This is a Heading in Code")
+summary(cars)
+knitr::kable(summary(cars))
+``` 
+
+
+
 
 ---
 
