@@ -207,7 +207,7 @@ Download Filezilla client for Mac/Windows
 
 #### HAWK Folder Structure
 
-<img src="/assets/img/hawk_folder_structure.png" alt="folderstr" width="1200"/>
+<img src="/assets/img/hawk_folder_structure1.png" alt="folderstr" width="1200"/>
 
 
 ---
