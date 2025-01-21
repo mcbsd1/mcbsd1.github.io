@@ -287,11 +287,7 @@ ls
 **Output**
 ```
 [c.mcbsd1@cl2(hawk) ~]$ ls
-assessments        featureCounts     Matrix.utils_0.9.8.tar.gz  nextflow            Rose_pipeline       test.txt               
-bin                file1.fastq.gz    monocle3                   perl5               scripts             units_0.8-0.tar.gz     
-Box-data           history_list.txt  my_data                    R                   sf_1.0-8.tar.gz     
-c.mcbsd1_dirs.txt  install           my_data.zip                results             spdep_1.2-7.tar.gz  
-Downloads          M_and_M_pipeline  newfile.txt                rnaseq_course_2024  test.sh             
+assessments     bin        Box-data  c.mcbsd1_dirs.txt            Downloads       featureCounts
 ```
 
 <br>
@@ -314,26 +310,6 @@ drwxrwxr-x  2 c.mcbsd1 c.mcbsd1    4096 Nov 26  2018 Box-data
 -rw-r--r--  1 c.mcbsd1 c.mcbsd1 1061373 Oct 11  2022 c.mcbsd1_dirs.txt
 drwxrwxr-x  9 c.mcbsd1 c.mcbsd1    4096 Oct  4 11:22 Downloads
 -rwx------  1 c.mcbsd1 c.mcbsd1 1691978 Sep 25  2019 featureCounts
-lrwxrwxrwx  1 c.mcbsd1 c.mcbsd1      55 Oct  6  2023 file1.fastq.gz -> /home/c.mcbsd1/my_data/subfolder1/SRR5252327_1.fastq.gz
--rw-rw-r--  1 c.mcbsd1 c.mcbsd1   26519 Oct  6  2023 history_list.txt
-drwxrwxr-x  2 c.mcbsd1 c.mcbsd1    4096 Oct 14  2022 install
-drwxrwxr-x  4 c.mcbsd1 c.mcbsd1    4096 Feb 10  2020 M_and_M_pipeline
--rw-rw-r--  1 c.mcbsd1 c.mcbsd1   10026 Oct 13  2022 Matrix.utils_0.9.8.tar.gz
-drwxrwxr-x  2 c.mcbsd1 c.mcbsd1    4096 Oct 14  2022 monocle3
-drwxrwxr-x  4 c.mcbsd1 c.mcbsd1    4096 Oct  6  2023 my_data
--rw-rw-r--  1 c.mcbsd1 c.mcbsd1  859734 Oct  5  2023 my_data.zip
--rw-rw-r--  1 c.mcbsd1 c.mcbsd1      54 Feb  5  2024 newfile.txt
--rwx--x--x  1 c.mcbsd1 c.mcbsd1   14684 Nov 12  2018 nextflow
-drwxrwxr-x  5 c.mcbsd1 c.mcbsd1    4096 Feb 19  2019 perl5
-drwxrwxr-x  3 c.mcbsd1 c.mcbsd1    4096 Feb 13  2019 R
-drwxr--r--  4 c.mcbsd1 c.mcbsd1    4096 Oct  6  2023 results
-drwxrwxr-x  2 c.mcbsd1 c.mcbsd1    4096 Feb  7  2019 Rose_pipeline
-drwxrwxr-x  4 c.mcbsd1 c.mcbsd1    4096 Dec  3  2019 scripts
--rw-rw-r--  1 c.mcbsd1 c.mcbsd1 3472914 Jul 14  2022 sf_1.0-8.tar.gz
--rw-rw-r--  1 c.mcbsd1 c.mcbsd1 4007514 Oct  1  2022 spdep_1.2-7.tar.gz
--rw-rw-r--  1 c.mcbsd1 c.mcbsd1      46 Sep 26 13:37 test.sh
--rw-rw-r--  1 c.mcbsd1 c.mcbsd1       9 Sep 26 13:38 test.txt
--rw-rw-r--  1 c.mcbsd1 c.mcbsd1  866695 Feb  5  2022 units_0.8-0.tar.gz
 ```
 <br>
 
@@ -354,24 +330,4 @@ drwxrwxr-x  2 c.mcbsd1 c.mcbsd1 4.0K Nov 26  2018 Box-data
 -rw-r--r--  1 c.mcbsd1 c.mcbsd1 1.1M Oct 11  2022 c.mcbsd1_dirs.txt
 drwxrwxr-x  9 c.mcbsd1 c.mcbsd1 4.0K Oct  4 11:22 Downloads
 -rwx------  1 c.mcbsd1 c.mcbsd1 1.7M Sep 25  2019 featureCounts
-lrwxrwxrwx  1 c.mcbsd1 c.mcbsd1   55 Oct  6  2023 file1.fastq.gz -> /home/c.mcbsd1/my_data/subfolder1/SRR5252327_1.fastq.gz
--rw-rw-r--  1 c.mcbsd1 c.mcbsd1  26K Oct  6  2023 history_list.txt
-drwxrwxr-x  2 c.mcbsd1 c.mcbsd1 4.0K Oct 14  2022 install
-drwxrwxr-x  4 c.mcbsd1 c.mcbsd1 4.0K Feb 10  2020 M_and_M_pipeline
--rw-rw-r--  1 c.mcbsd1 c.mcbsd1 9.8K Oct 13  2022 Matrix.utils_0.9.8.tar.gz
-drwxrwxr-x  2 c.mcbsd1 c.mcbsd1 4.0K Oct 14  2022 monocle3
-drwxrwxr-x  4 c.mcbsd1 c.mcbsd1 4.0K Oct  6  2023 my_data
--rw-rw-r--  1 c.mcbsd1 c.mcbsd1 840K Oct  5  2023 my_data.zip
--rw-rw-r--  1 c.mcbsd1 c.mcbsd1   54 Feb  5  2024 newfile.txt
--rwx--x--x  1 c.mcbsd1 c.mcbsd1  15K Nov 12  2018 nextflow
-drwxrwxr-x  5 c.mcbsd1 c.mcbsd1 4.0K Feb 19  2019 perl5
-drwxrwxr-x  3 c.mcbsd1 c.mcbsd1 4.0K Feb 13  2019 R
-drwxr--r--  4 c.mcbsd1 c.mcbsd1 4.0K Oct  6  2023 results
-drwxrwxr-x  2 c.mcbsd1 c.mcbsd1 4.0K Feb  7  2019 Rose_pipeline
-drwxrwxr-x  4 c.mcbsd1 c.mcbsd1 4.0K Dec  3  2019 scripts
--rw-rw-r--  1 c.mcbsd1 c.mcbsd1 3.4M Jul 14  2022 sf_1.0-8.tar.gz
--rw-rw-r--  1 c.mcbsd1 c.mcbsd1 3.9M Oct  1  2022 spdep_1.2-7.tar.gz
--rw-rw-r--  1 c.mcbsd1 c.mcbsd1   46 Sep 26 13:37 test.sh
--rw-rw-r--  1 c.mcbsd1 c.mcbsd1    9 Sep 26 13:38 test.txt
--rw-rw-r--  1 c.mcbsd1 c.mcbsd1 847K Feb  5  2022 units_0.8-0.tar.gz
 ```
