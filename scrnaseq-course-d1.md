@@ -306,4 +306,19 @@ total 0
 lrwxr-xr-x 1 sumukhdeshpande staff  45 Jun  6  2023 Cytoscape -> /Applications/Cytoscape_v3.10.0/Cytoscape.app
 drwxr-xr-x 7 sumukhdeshpande staff 224 Feb  8  2024 DE
 ```
+<br>
 
+- `ls -lh` shows the contents in the human-readable long format.
+
+**Input**
+```
+ls -lh
+```
+
+**Output**
+```
+(base) Sumukh-2:Desktop sumukhdeshpande$ ls -lh
+total 0
+lrwxr-xr-x 1 sumukhdeshpande staff  45 Jun  6  2023 Cytoscape -> /Applications/Cytoscape_v3.10.0/Cytoscape.app
+drwxr-xr-x 7 sumukhdeshpande staff 224 Feb  8  2024 DE
+```
