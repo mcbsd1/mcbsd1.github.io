@@ -354,3 +354,39 @@ ls
 [c.mcbsd1@cl2(hawk) Box-data]$ ls
 download_files_script1.py  download_files_script2.py  download_files_script.py
 ```
+
+---
+
+<br>
+
+---
+**Making Use Of The Dot(.)**
+- As mentioned above, the dot(<b>.</b>) is used to tell the system where you currently are.
+- This is best used for commands such as `ls` and `cd`.
+- When we combine two dots(<b>..</b>), this tells the system to use the directory above where we currently are.
+
+Input|Description
+-----|-----------
+.|Here/where I am now
+..|Previous directory/up one directory
+
+-For example, if I am currently in the Desktop directory and want to list contents of where I currently am, I can either use `ls` or `ls .`
+
+**Input**
+```
+ls -l
+ls -l .
+```
+
+**Output**
+```
+[c.mcbsd1@cl2(hawk) Box-data]$ ls -l .
+total 11840
+drwxrwxr-x 11 c.mcbsd1 c.mcbsd1    4096 Nov 12  2021 assessments
+drwxrwxr-x  2 c.mcbsd1 c.mcbsd1    4096 Oct  8 11:15 bin
+drwxrwxr-x  2 c.mcbsd1 c.mcbsd1    4096 Nov 26  2018 Box-data
+-rw-r--r--  1 c.mcbsd1 c.mcbsd1 1061373 Oct 11  2022 c.mcbsd1_dirs.txt
+drwxrwxr-x  9 c.mcbsd1 c.mcbsd1    4096 Oct  4 11:22 Downloads
+-rwx------  1 c.mcbsd1 c.mcbsd1 1691978 Sep 25  2019 featureCounts
+```
+
