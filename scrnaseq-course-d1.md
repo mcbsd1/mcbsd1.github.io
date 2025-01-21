@@ -266,6 +266,44 @@ pwd
 
 **Output**
 ```
-/Users/mcbsd1/Desktop
+/Users/sumukhdeshpande/Desktop
+```
+
+---
+<br>
+
+---
+## Basic Unix Commands: ls Command
+---
+---
+
+- To explore the directory, we can use the `ls` command to list the contents of the Desktop directory:
+
+**Input**
+```
+ls
+```
+
+**Output**
+```
+Cytoscape  DE
+```
+
+<br>
+
+- `ls -l` shows the contents in the long format.
+- It provides more information than a simple ls command, including file permissions, ownership, size, and modification time.
+
+**Input**
+```
+ls -l
+```
+
+**Output**
+```
+(base) Sumukh-2:Desktop sumukhdeshpande$ ls -l
+total 0
+lrwxr-xr-x 1 sumukhdeshpande staff  45 Jun  6  2023 Cytoscape -> /Applications/Cytoscape_v3.10.0/Cytoscape.app
+drwxr-xr-x 7 sumukhdeshpande staff 224 Feb  8  2024 DE
 ```
 
