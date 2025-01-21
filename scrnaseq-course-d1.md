@@ -386,7 +386,6 @@ total 12
 -rw-rw-r-- 1 c.mcbsd1 c.mcbsd1 869 Nov 26  2018 download_files_script2.py
 -rw-rw-r-- 1 c.mcbsd1 c.mcbsd1 183 Nov 26  2018 download_files_script.py
 [c.mcbsd1@cl2(hawk) Box-data]$ ls -l ..
-total 11840
 drwxrwxr-x 11 c.mcbsd1 c.mcbsd1    4096 Nov 12  2021 assessments
 drwxrwxr-x  2 c.mcbsd1 c.mcbsd1    4096 Oct  8 11:15 bin
 drwxrwxr-x  2 c.mcbsd1 c.mcbsd1    4096 Nov 26  2018 Box-data
