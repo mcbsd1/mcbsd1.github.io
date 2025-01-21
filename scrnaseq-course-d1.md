@@ -331,3 +331,26 @@ drwxrwxr-x  2 c.mcbsd1 c.mcbsd1 4.0K Nov 26  2018 Box-data
 drwxrwxr-x  9 c.mcbsd1 c.mcbsd1 4.0K Oct  4 11:22 Downloads
 -rwx------  1 c.mcbsd1 c.mcbsd1 1.7M Sep 25  2019 featureCounts
 ```
+<br>
+
+---
+## Basic Unix Commands: cd Command
+---
+---
+
+- To move between different directories, we use the `cd` command.
+- In the example below,  we move into the Box-data directory.
+- **Note:** we can use the `tab-key` to autofill. Start typing the name of the directory and then hit tab.
+- **Note:** when we use the `cd` command, we don't get any feedback from the shell. Usually, we move into the directory, then use the `ls` command to show us the contents.
+
+**Input**
+```
+cd Box-data
+ls
+```
+
+**Output**
+```
+[c.mcbsd1@cl2(hawk) Box-data]$ ls
+download_files_script1.py  download_files_script2.py  download_files_script.py
+```
