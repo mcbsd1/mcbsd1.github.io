@@ -286,7 +286,12 @@ ls
 
 **Output**
 ```
-Cytoscape  DE
+[c.mcbsd1@cl2(hawk) ~]$ ls
+assessments        featureCounts     Matrix.utils_0.9.8.tar.gz  nextflow            Rose_pipeline       test.txt               
+bin                file1.fastq.gz    monocle3                   perl5               scripts             units_0.8-0.tar.gz     
+Box-data           history_list.txt  my_data                    R                   sf_1.0-8.tar.gz     
+c.mcbsd1_dirs.txt  install           my_data.zip                results             spdep_1.2-7.tar.gz  
+Downloads          M_and_M_pipeline  newfile.txt                rnaseq_course_2024  test.sh             
 ```
 
 <br>
