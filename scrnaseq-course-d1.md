@@ -394,3 +394,103 @@ drwxrwxr-x  9 c.mcbsd1 c.mcbsd1    4096 Oct  4 11:22 Downloads
 -rwx------  1 c.mcbsd1 c.mcbsd1 1691978 Sep 25  2019 featureCounts
 ```
 
+---
+## Basic Unix Commands: Making a directory
+---
+---
+
+- To make a directory, we can use the `mkdir` command.
+
+**Input**
+```
+mkdir name-of-directory
+```
+- The command works by calling the `mkdir` command  followed by the name of the directory you want to make.
+- We can use this command to make multiple directories within the current directory, too:
+
+**Input**
+```
+mkdir directory1 directory2 directory3
+```
+- Each new directory is named after the other and is separated by a space whilst using the command.
+- We can also create a new directory within an existing directory without moving into it:
+
+**Input**
+```
+mkdir directory1/directory1.1
+```
+
+---
+## Basic Unix Commands: `touch` command
+---
+---
+
+- This is primarily used to create empty files.
+
+**Input**
+```
+touch new_file.txt
+```
+- You can create multiple empty files in a single command.
+
+**Input**
+```
+touch new_file1.txt new_file2.txt new_file3.txt
+```
+
+---
+## Basic Unix Commands: `mv` command
+---
+---
+
+- The `mv` command in unix is used to move or rename files and directories.
+
+**Input**
+```
+mv file.txt /path/to/destination
+```
+
+For example, 
+
+**Input**
+```
+mv new_file1.txt /home/c.mcbsd1/Documents
+```
+
+---
+**Wildcard (*)**
+- The wildcard (<b>*</b>) can be used to select multiple things at once.
+- It is used to match any character and is commonly used to select directories/files with common names.
+- **Example:** if there are multiple directories (file-1 through file-10) and I wanted to move them all into one directory (dir-1), I could use the common name to all the files followed by the wildcard.
+
+```
+mv file* dir-1/
+```
+
+- The wildcard can also be used to select the same file extensions. Example: If we wanted to move all the .fastq files to a new directory, we would use the wildcard followed by the extension.
+
+```
+mv *.fastq dir-1/
+```
+
+---
+## Basic Unix Commands: Copying a file using `cp` command
+---
+---
+
+- The copy command does what it says on the tin... Copies a file/directory from one place to another.
+
+**Input**
+```
+cp new_file2.txt /home/c.mcbsd1/Documents
+```
+
+- The command works by first inputting the name of the file/directory that you want to copy, followed by the location of where you want to copy it to.
+- To copy a directory, we need to use the `-r` option, which recursively copies the directory and all of its contents to the desired location:
+
+**Input**
+```
+cp -r name-of-directory path/to/directory/
+```
+
+
