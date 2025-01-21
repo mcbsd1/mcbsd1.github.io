@@ -493,4 +493,80 @@ cp new_file2.txt /home/c.mcbsd1/Documents
 cp -r name-of-directory path/to/directory/
 ```
 
+---
+## Basic Unix Commands: Removing files and folders using `rm` command
+---
+---
+
+- This is used to remove files or directories. It is a powerful command, so it should be used **cautiously**, as deleted files and directories are typically **not recoverable**.
+
+- For example, we will create an example text file called "test_file.txt"
+
+**Input**
+```
+touch test_file.txt
+ls -l
+rm test_file.txt
+```
+
+---
+---
+## Exercise 1
+---
+---
+
+- Open a shell on your PC.
+- Find out where you are.
+- Create a directory named `practical-1` in your current working directory.
+- Create three text files within `practical-1` folder. For ex- prac_file1.txt, prac_file2.txt, prac_file3.txt 
+- Move into the `practical-1` directory and list the contents.
+- Remove the prac_file3.txt from the `practical-1` folder.
+
+
+<details>
+<summary><b>Answer</b></summary>
+
+<br>
+
+Find out where you are: <pre><span style="color:crimson;">pwd</span></pre>
+
+<br>
+
+Create a directory named `practical-1`: <pre><span style="color:crimson;">mkdir practical-1</span></pre>
+
+<br>
+
+Create three text files within `practical-1` folder:
+Move into the `practical-1` directory and list the contents:
+
+<pre><span style="color:crimson;">
+cd practical-1
+touch prac_file1.txt prac_file2.txt prac_file3.txt
+ls -l
+</span></pre>
+
+<br>
+
+Move into the `practical-1` directory and list the contents: <pre><span style="color:crimson;">cd unix-practical</span></pre>
+
+<br>
+
+The unix-practical directory should be located within your Downloads directory (unless you have moved it)
+
+<pre><span style="color:crimson;">
+pwd
+ls /Users/c1234567/Downloads
+cd unix-practical
+ls
+</span></pre>
+
+<br>
+
+Remove the prac_file3.txt from the `practical-1` folder: <pre><span style="color:crimson;">rm prac_file3.txt</span></pre>
+
+</details>
+
+---
+
+<br>
 
