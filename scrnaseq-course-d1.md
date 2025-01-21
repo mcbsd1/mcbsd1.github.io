@@ -212,10 +212,16 @@ Download Filezilla client for Mac/Windows
 
 <img src="/assets/img/hawk_folder_structure1.png" alt="folderstr" width="1200"/>
 
+---
+
+<br>
+
+---
 
 ## Basic Unix Commands
 
 - Here is a list of commonly used Unix commands that we will be using:
+
 
 Command|Description|Common Options|Option Description
 |:----:|:----------|:-----------|:--------------|
@@ -241,3 +247,25 @@ Command|Description|Common Options|Option Description
 <br>
 
 ---
+
+
+---
+## Basic Unix Commands: pwd Command
+---
+---
+
+- When we first open a Unix shell, we are taken to the default directory.
+- If you have downloaded a shell (such as iTerm2, MobaXterm), this location can change depending on where you installed the software.
+- To find out where we are currently located, we can use the `pwd` command.
+- In the example below, the pwd output tells me that I am in my Desktop directory.
+
+**Input**
+```
+pwd
+```
+
+**Output**
+```
+/Users/mcbsd1/Desktop
+```
+
