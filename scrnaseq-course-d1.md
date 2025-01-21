@@ -205,10 +205,36 @@ Download Filezilla client for Mac/Windows
 - The way we interact with HAWK is through the command line via Bash.
 - Think of HAWK as a computer that's located in the cloud. We can connect to it via out Unix shells - Terminal, MobaXterm, and FileZilla.
 
+
+---
 #### HAWK Folder Structure
+---
 
 <img src="/assets/img/hawk_folder_structure1.png" alt="folderstr" width="1200"/>
 
+
+## Basic Unix Commands
+
+- Here is a list of commonly used Unix commands that we will be using:
+
+Command|Description|Common Options|Option Description
+|:----:|:----------|:-----------|:--------------|
+`ls`|print directory contents|`ls -lah`|list that is long, shows hidden files, and is human-readable
+`mv`|rename/move a file|`mv -r/*`|moves recursively (moves a directory and everything inside)/moves everything
+`cp`|copy a file|`cp -r/*`|copies recursively (copies a directory and everything inside)/copies everything
+`cd`|change directory||
+`pwd`|print current working directory||
+`history`|what have I typed?||
+`rm`|remove a file|`rm -r/*`|removes recursively (removes a directory and everything inside)/removes everything
+`mkdir`|make a directory||
+`touch`|make an empty file||
+`nano`|open and edit a file||
+`more/less`|reads a file||
+`head`|read the top of a file||
+`tail`|read the bottom of a file||
+`wc`|count the number of lines in a file||
+`grep`|word search in a file||
+`chmod`|change permission of a file|`chmod +x`|makes file executable
 
 ---
 
