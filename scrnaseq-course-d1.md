@@ -570,3 +570,38 @@ Remove the prac_file3.txt from the `practical-1` folder: <pre><span style="color
 
 <br>
 
+---
+---
+## nextflow pipeline
+---
+---
+<br>
+
+
+---
+### Log into HAWK
+---
+
+- Lets first log onto HAWK. We will be using a terminal to access HAWK.
+- If you are a Mac user, you can use terminal to access the remote server.
+- If you are using VSCode, then follow the steps to access the terminal:
+
+
+1.
+<img src="/assets/img/filezilla-1.png" alt="gui1" width="1200"/>
+
+
+2.
+<img src="/assets/img/filezilla-1.png" alt="gui1" width="1200"/>
+
+
+3.
+<img src="/assets/img/filezilla-1.png" alt="gui1" width="1200"/>
+
+
+***Linux Users***
+- In your shell, log into HAWK with:
+```
+ssh c.c1234567@hawklogin.cf.ac.uk
+#Enter Password
+```
