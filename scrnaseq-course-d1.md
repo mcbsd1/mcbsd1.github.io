@@ -588,16 +588,22 @@ Remove the prac_file3.txt from the `practical-1` folder: <pre><span style="color
 
 
 1.
-<img src="/assets/img/filezilla-1.png" alt="gui1" width="1200"/>
+<img src="/assets/img/VScode-1.png" alt="gui1" width="1200"/>
 
 
 2.
-<img src="/assets/img/filezilla-1.png" alt="gui1" width="1200"/>
+<img src="/assets/img/VScode-2.png" alt="gui1" width="1200"/>
 
 
 3.
-<img src="/assets/img/filezilla-1.png" alt="gui1" width="1200"/>
+<img src="/assets/img/VScode-3.png" alt="gui1" width="1200"/>
 
+
+4.
+<img src="/assets/img/VScode-4.png" alt="gui1" width="1200"/>
+
+---
+---
 
 ***Linux Users***
 - In your shell, log into HAWK with:
