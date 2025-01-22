@@ -586,6 +586,7 @@ Remove the prac_file3.txt from the `practical-1` folder: <pre><span style="color
 - If you are a Mac user, you can use terminal to access the remote server.
 - If you are using VSCode, then follow the steps to access the terminal:
 
+<br>
 
 1. The VSCode is an Integrated Development Environment (IDE) and is an open-source editor and supports various programming languages and is known for its efficiency in writing, debugging, and maintaining code.
 
@@ -593,11 +594,15 @@ Remove the prac_file3.txt from the `practical-1` folder: <pre><span style="color
 
 
 2. On the top panel, click on Terminal tab and then click on `New Terminal`.
+   
 <img src="/assets/img/VScode-3.png" alt="gui1" width="1200"/>
 
 
 3. This will open a terminal window within the editor where you can type in unix commands.
+   
 <img src="/assets/img/VScode-4.png" alt="gui1" width="1200"/>
+
+<br>
 
 ---
 ---
