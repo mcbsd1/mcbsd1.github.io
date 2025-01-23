@@ -613,3 +613,23 @@ Remove the prac_file3.txt from the `practical-1` folder: <pre><span style="color
 ssh c.c1234567@hawklogin.cf.ac.uk
 #Enter Password
 ```
+
+---
+### Fetch the project from GitHub
+---
+---
+
+- To get the project directory from GitHub, we simply just copy and paste one line of code below.
+- We will first want to **move into our scratch directory**.
+
+```
+cd /scratch/c.c1234567
+```
+
+- Create a folder named `scrnaseq`
+
+```
+mkdir scrnaseq
+```
+
+- We next want to fetch the project from GitHub. 
