@@ -626,12 +626,13 @@ ssh c.c1234567@hawklogin.cf.ac.uk
 ```
 cd /scratch/c.c1234567
 ```
-
+<br>
 - Create a folder named `scrnaseq`
 <br>
 
 ```
 mkdir scrnaseq
 ```
+<br>
 
 - We next want to fetch the project from GitHub. 
