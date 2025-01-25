@@ -632,4 +632,11 @@ cd /scratch/c.c1234567
 mkdir scrnaseq
 ```
 <br>
-- We next want to fetch the project from GitHub. 
+- Next, we want to fetch the project from GitHub. 
+- Now we can simply paste the following code into the terminal and hit enter:
+
+```
+git clone https://github.com/mcbsd1/scrnaseq.git
+```
+- You will get a notification when things are done.
+- To double check if the directory has been downloaded, we can use the `ls` command.
