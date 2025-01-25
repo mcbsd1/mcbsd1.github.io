@@ -628,11 +628,15 @@ cd /scratch/c.c1234567
 ```
 
 
-- Create a folder named `scrnaseq`
-
+- Create a folder named `scrnaseq-course`
+- Create another folder called `Day-1` within `scrnaseq-course` folder
+- Navigate into the `Day-1` folder
 
 ```
-mkdir scrnaseq
+mkdir scrnaseq-course
+cd scrnaseq-course
+mkdir Day-1
+cd Day-1
 ```
 
 
@@ -645,3 +649,64 @@ git clone https://github.com/mcbsd1/scrnaseq.git
 
 - You will get a notification when things are done.
 - To double check if the directory has been downloaded, we can use the `ls` command.
+
+---
+### Set-up
+---
+---
+
+- We need to change permissions of the `scrnaseq-course` directory so that any daughter files and directories will inherit the same permissions.
+- You will have to navigate to the parent directory first.
+
+```
+cd /scratch/c.c1234567
+```
+
+- In the terminal window paste the following:
+
+```
+chmod -R 777 scrnaseq-course #777 gives read, write, and execute permissions for everyone
+
+setfacl -d -m u::rwx,g::rwx,o::rwx scrnaseq-course #this code gives same permissions to daughter files and directories that are made.
+```
+
+- We also need to change permissions of the scripts in the bin directory:
+
+```
+cd scrnaseq-course/Day-1/scrnaseq/bin
+chmod +x *.sh
+```
+
+---
+#### Required files
+---
+---
+
+- Once you have downloaded the Github folder, you can view the contents of the scrnaseq folder which is stored within `Day-1` diirectory.
+- Use the `ls` command to view the contents of the folder:
+
+```
+.
+└── scrnaseq/
+    ├── bin/
+    │   ├── differentialabundance.sh
+    │   ├── download-ref-genome.sh
+    │   ├── fetchngs.sh
+    │   ├── generate-samplesheet.sh
+    │   └── rnaseq.sh
+    ├── resources/
+    │   ├── conditions.csv
+    │   ├── contrasts.csv
+    │   ├── diff-abundance-params.yaml
+    │   ├── example-conditions.csv
+    │   ├── fetchngs-params.yaml
+    │   ├── ids.csv
+    │   ├── my.config
+    │   └── rnaseq-params.yaml
+    ├── input/
+    │   ├── fastq/
+    │   └── example_fastqs/
+    └── output/
+```
+
+- **Note: We will be executing the pipeline from the parent directory (scrnaseq)**
