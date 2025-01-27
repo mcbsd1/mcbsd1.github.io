@@ -749,7 +749,7 @@ rm -r 1k_mouse_kidney_CNIK_3pv3_fastqs
 
 ---
 ---
-### Downloading the reference genome files - FASTA and GTF files
+### Downloading reference genome files - FASTA and GTF files
 ---
 ---
 
