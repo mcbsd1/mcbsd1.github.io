@@ -689,23 +689,15 @@ chmod +x *.sh
 .
 └── scrnaseq/
     ├── bin/
-    │   ├── differentialabundance.sh
-    │   ├── download-ref-genome.sh
-    │   ├── fetchngs.sh
-    │   ├── generate-samplesheet.sh
-    │   └── rnaseq.sh
+    │   └──download-ref-genome.sh
     ├── resources/
-    │   ├── conditions.csv
-    │   ├── contrasts.csv
-    │   ├── diff-abundance-params.yaml
-    │   ├── example-conditions.csv
-    │   ├── fetchngs-params.yaml
-    │   ├── ids.csv
-    │   ├── my.config
-    │   └── rnaseq-params.yaml
+    │   ├── samplesheet.csv
+    │   ├── Mus_musculus.GRCm39.dna_sm.primary_assembly.fa
+    │   └── Mus_musculus.GRCm39.113.gtf
     ├── input/
-    │   ├── fastq/
-    │   └── example_fastqs/
+    │   └── fastq/
+    ├── main.nf
+    ├── nextflow.config
     └── output/
 ```
 
