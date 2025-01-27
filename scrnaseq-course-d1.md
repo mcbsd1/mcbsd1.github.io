@@ -702,3 +702,13 @@ chmod +x *.sh
 ```
 
 - **Note: We will be executing the pipeline from the parent directory (scrnaseq)**
+
+
+---
+### Downloading the sequencing data 
+---
+---
+
+- Once you have downloaded the Github folder, the next step is to download/fetch fastq data.
+- In this course, we will be downloading the fastq data from 10x Genomics website.
+- Here is the link for the example data: [1k Mouse Kidney dataset]([https://pages.github.com/](https://www.10xgenomics.com/datasets/1k-mouse-kidney-nuclei-isolated-with-chromium-nuclei-isolation-kit-3-1-standard))
