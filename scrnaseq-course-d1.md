@@ -711,4 +711,12 @@ chmod +x *.sh
 
 - Once you have downloaded the Github folder, the next step is to download/fetch fastq data.
 - In this course, we will be downloading the fastq data from 10x Genomics website.
-- Here is the link for the example data: [1k Mouse Kidney dataset](https://www.10xgenomics.com/datasets/1k-mouse-kidney-nuclei-isolated-with-chromium-nuclei-isolation-kit-3-1-standard))
+- Here is the link for the example data: [1k Mouse Kidney dataset](https://www.10xgenomics.com/datasets/1k-mouse-kidney-nuclei-isolated-with-chromium-nuclei-isolation-kit-3-1-standard)
+- For every dataset we run on Nextflow, we will need reference files: **FASTA file** and **GTF file**
+- If you are working with human data (fastq files)
+- On linux terminal, execute the following commands:
+
+---
+```
+bash bin/download-ref-genome.sh
+```
