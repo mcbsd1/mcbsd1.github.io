@@ -705,13 +705,54 @@ chmod +x *.sh
 
 
 ---
-### Downloading the sequencing data 
+### Downloading the sequencing data - FASTQ files
 ---
 ---
 
 - Once you have downloaded the Github folder, the next step is to download/fetch fastq data.
 - In this course, we will be downloading the fastq data from 10x Genomics website.
 - Here is the link for the example data: [1k Mouse Kidney dataset](https://www.10xgenomics.com/datasets/1k-mouse-kidney-nuclei-isolated-with-chromium-nuclei-isolation-kit-3-1-standard)
+- Type the following commands to download the example fastq files within *input/fastq* folder
+
+---
+```
+cd input/fastq
+wget https://cf.10xgenomics.com/samples/cell-exp/7.0.0/1k_mouse_kidney_CNIK_3pv3/1k_mouse_kidney_CNIK_3pv3_fastqs.tar
+```
+---
+Once this is finished downloading, uncompress the files using the following command:
+
+---
+```
+tar xvf 1k_mouse_kidney_CNIK_3pv3_fastqs.tar
+```
+---
+- This will create a folder called `1k_mouse_kidney_CNIK_3pv3_fastqs`
+- List the files inside the folder using the `ls` command.
+
+---
+```
+ls 1k_mouse_kidney_CNIK_3pv3_fastqs
+```
+---
+
+- Now, move the files from `1k_mouse_kidney_CNIK_3pv3_fastqs` folder into `fastq` folder.
+- For this, we will be using `mv` command. Since we would like to copy all the fastq files, we will be using `*.fastq` to select all files ending with .fastq
+- Following this, we will be deleting the empty folder `1k_mouse_kidney_CNIK_3pv3_fastqs` which does not contain any files now.
+
+---
+```
+mv 1k_mouse_kidney_CNIK_3pv3_fastqs/*.fastq .
+rm -r 1k_mouse_kidney_CNIK_3pv3_fastqs
+```
+---
+
+---
+---
+### Downloading the reference genome files - FASTA and GTF files
+---
+---
+
 - For every dataset we run on Nextflow, we will need reference files: **FASTA file** and **GTF file**
 - If you are working with human data (fastq files)
 - On linux terminal, execute the following commands:
