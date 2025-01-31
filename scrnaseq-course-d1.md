@@ -794,3 +794,18 @@ rm -r 1k_mouse_kidney_CNIK_3pv3_fastqs
 ```
 bash bin/download-ref-genome.sh
 ```
+
+---
+---
+### Generating samplesheet
+---
+---
+
+- First, prepare a samplesheet with your input data that looks as follows:
+
+`samplesheet.csv`:
+
+```
+suppliedID,analysisID,sampleGroup
+1k_mouse_kidney_CNIK_3pv3,S1,C57_Bl6
+```
