@@ -662,14 +662,11 @@ cd /scratch/c.c1234567
 
 
 - Create a folder named `scrnaseq-course`
-- Create another folder called `Day-1` within `scrnaseq-course` folder
-- Navigate into the `Day-1` folder
+- Navigate into the `scrnaseq-course` folder
 
 ```
 mkdir scrnaseq-course
 cd scrnaseq-course
-mkdir Day-1
-cd Day-1
 ```
 
 
@@ -706,7 +703,7 @@ setfacl -d -m u::rwx,g::rwx,o::rwx scrnaseq-course #this code gives same permiss
 - We also need to change permissions of the scripts in the bin directory:
 
 ```
-cd scrnaseq-course/Day-1/scrnaseq/bin
+cd scrnaseq-course/scrnaseq/bin
 chmod +x *.sh
 ```
 
@@ -715,7 +712,7 @@ chmod +x *.sh
 ---
 ---
 
-- Once you have downloaded the Github folder, you can view the contents of the scrnaseq folder which is stored within `Day-1` diirectory.
+- Once you have downloaded the Github folder, you can view the contents of the scrnaseq folder.
 - Use the `ls` command to view the contents of the folder:
 
 ```
