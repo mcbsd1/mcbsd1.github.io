@@ -91,7 +91,13 @@ cd cellranger_count_1k_mouse_kidney_CNIK_3pv3
 ---
 ---
 
-- Copy the line in your markdown document
+- Copy the line in your markdown document:
+
+```{r}
+# load libraries
+
+library(Seurat)
+```
 
 <img src="/assets/img/rmarkdown-1.png" alt="gui1" width="800"/>
 
