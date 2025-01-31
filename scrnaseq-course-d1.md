@@ -615,6 +615,36 @@ ssh c.c1234567@hawklogin.cf.ac.uk
 ```
 
 ---
+### Cellranger workflow
+---
+---
+
+- If you are beginning with FASTQ files that have already been demultiplexed, you can skip the demultiplexing step and begin with `cellranger count`.
+
+---
+#### One sample, multiple GEM wells, one flow cell
+---
+
+- Here, one sample is processed through multiple GEM wells. This is typically done when conducting technical replicate experiments.
+
+- The libraries from the GEM wells are then pooled onto one flow cell and sequenced.
+
+- Here, we focus on the Fastq's generated and `cellranger count` is executed. Following this, `cellranger aggr` is executed for aggregating the counts.
+
+<img src="/assets/img/CellRanger_Workflow_1sample-xGEMwells-1flowcell.png" alt="gui1" width="1200"/>
+
+---
+#### Multiple samples, multiple GEM wells, one flow cell
+---
+
+- In this example, multiple samples are processed through multiple GEM wells, which generate multiple libraries and are pooled onto one flow cell.
+
+- After demultiplexing, you must run cellranger count separately for each GEM well; if you have two GEM wells, then run `cellranger count` twice. Then you can aggregate them with a single instance of `cellranger aggr`
+
+<img src="/assets/img/CellRanger_Workflow_xsamples-xGEMwells-1flowcell.png" alt="gui1" width="1200"/>
+
+
+---
 ### Fetch the project from GitHub
 ---
 ---
