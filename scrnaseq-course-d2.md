@@ -72,6 +72,18 @@ cd cellranger_count_1k_mouse_kidney_CNIK_3pv3
 - Click on `New File` --> `R Markdown...`
 <img src="/assets/img/rstudio-newfile.png" alt="gui1" width="800"/>
 
+---
+- This is will open an `Untiltled` file on the top-left hand side.
+
+---
+<img src="/assets/img/rstudio-untilted-rmarkdown.png" alt="gui1" width="800"/>
+
+---
+- Delete lines from 7 until 29 except first 5-6 lines.
+
+---
+<img src="/assets/img/rmarkdown-2.png" alt="gui1" width="800"/>
+
 <br>
 
 ---
@@ -81,7 +93,7 @@ cd cellranger_count_1k_mouse_kidney_CNIK_3pv3
 
 - Copy the line in your markdown document
 
-
+<img src="/assets/img/rmarkdown-1.png" alt="gui1" width="800"/>
 
 
 
