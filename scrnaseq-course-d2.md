@@ -59,6 +59,8 @@ cd cellranger_count_1k_mouse_kidney_CNIK_3pv3
 
 
 ---
-## Course Introduction
+## Processing scrnaseq data in Seurat 
 ---
 ---
+
+- Once the counts have been downloaded into the `scrnaseq-nextflow` folder on your lopcal machine, start **RStudio** on Mac/Windows. 
