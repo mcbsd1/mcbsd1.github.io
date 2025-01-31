@@ -55,7 +55,7 @@ cd cellranger_count_1k_mouse_kidney_CNIK_3pv3
 - Once the files are copied, these should be visible on your local machine under `scrnaseq-nextflow` folder.
 
 ---
-
+<img src="/assets/img/filezilla-login.png" alt="gui1" width="1200"/>
 
 
 ---
