@@ -44,8 +44,8 @@ cd cellranger_count_1k_mouse_kidney_CNIK_3pv3
 - Follow the steps below:
 
 1. Type in the Host: hawklogin.cf.ac.uk
-2. Username: c.1234567
-3. Password:
+2. Username: <hawk username>
+3. Password: <hawk password>
 4. Port: 22
 
 - Click on `Quickconnect`
