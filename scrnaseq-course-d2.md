@@ -63,4 +63,9 @@ cd cellranger_count_1k_mouse_kidney_CNIK_3pv3
 ---
 ---
 
-- Once the counts have been downloaded into the `scrnaseq-nextflow` folder on your lopcal machine, start **RStudio** on Mac/Windows. 
+- Once the counts have been downloaded into the `scrnaseq-nextflow` folder on your lopcal machine, start **RStudio** on Mac/Windows.
+
+---
+<img src="/assets/img/rstudio.png" alt="gui1" width="1200"/>
+
+
