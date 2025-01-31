@@ -809,3 +809,8 @@ bash bin/download-ref-genome.sh
 suppliedID,analysisID,sampleGroup
 1k_mouse_kidney_CNIK_3pv3,S1,C57_Bl6
 ```
+---
+- This is stored under **resources/samplesheet.csv**
+- This contains information such as the identifier i.e suppliedID, analysisID and sampleGroup columns.
+- The sampleGroup should contain information such as `normal` and `tumor`, or `healthy` and `diseased`, etc.
+- Since this example dataset is extracted from C57/Bl6 adult mouse kidney, the sampleGroup column has the value as `C57_Bl6`.
