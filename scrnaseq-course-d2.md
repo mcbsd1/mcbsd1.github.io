@@ -28,7 +28,10 @@ author: "Sumukh Deshpande"
 - Login to your Hawk account and access the folder:
 
 ```
-cd /scratch/c.123456/
+cd /scratch/c.123456/scrnaseq-course/scrnaseq/results
+
+cd cellranger_count_1k_mouse_kidney_CNIK_3pv3
+
 ```
 
 
