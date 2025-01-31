@@ -613,6 +613,7 @@ Remove the prac_file3.txt from the `practical-1` folder: <pre><span style="color
 ssh c.c1234567@hawklogin.cf.ac.uk
 #Enter Password
 ```
+<br>
 
 ---
 ### Cellranger workflow
