@@ -59,7 +59,7 @@ cd cellranger_count_1k_mouse_kidney_CNIK_3pv3
 
 
 ---
-## Processing scrnaseq data in Seurat 
+## Processing scrnaseq data (1k_mouse_kidney_CNIK_3pv3) in Seurat 
 ---
 ---
 
