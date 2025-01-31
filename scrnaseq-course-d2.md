@@ -34,6 +34,28 @@ cd cellranger_count_1k_mouse_kidney_CNIK_3pv3
 
 ```
 
+---
+## Downloading data for analysis in Seurat
+---
+---
+
+- Once the counts are generated using nextflow pipeline, download the data onto your personal computer.
+- For this, you will need to use Filezilla to copy the files from remote onto your local machine.
+- Follow the steps below:
+
+1. Type in the Host: hawklogin.cf.ac.uk
+2. Username: c.1234567
+3. Password:
+4. Port: 22
+
+- Click on `Quickconnect`
+- Navigate to the folder `scrnaseq-course/scrnaseq/results`
+- Create a folder on your local machine, called `scrnaseq-nextflow`
+- Now, Drag and Drop the files from the `results` folder in the remote server to your `scrnaseq-nextflow` folder on your lopcal machine.
+- Once the files are copied, these should be visible on your local machine under `scrnaseq-nextflow` folder.
+
+---
+
 
 
 ---
