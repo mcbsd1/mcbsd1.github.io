@@ -68,4 +68,6 @@ cd cellranger_count_1k_mouse_kidney_CNIK_3pv3
 ---
 <img src="/assets/img/rstudio.png" alt="gui1" width="1200"/>
 
-
+---
+- Click on `New File` --> `R Markdown...`
+<img src="/assets/img/rstudio-newfile.png" alt="gui1" width="1200"/>
