@@ -633,6 +633,8 @@ ssh c.c1234567@hawklogin.cf.ac.uk
 
 <img src="/assets/img/CellRanger_Workflow_1sample-xGEMwells-1flowcell.png" alt="gui1" width="1200"/>
 
+<br>
+
 ---
 #### Multiple samples, multiple GEM wells, one flow cell
 ---
