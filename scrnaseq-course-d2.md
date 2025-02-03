@@ -93,9 +93,8 @@ cd cellranger_count_1k_mouse_kidney_CNIK_3pv3
 
 - Copy the line in your markdown document:
 
-```{r}
+```
 # load libraries
-
 library(Seurat)
 ```
 
