@@ -116,7 +116,7 @@ library(Seurat)
 
 ```
 # Load the 1k mouse kidney dataset
-dat2 <- Read10X(data.dir = "../input/filtered_feature_bc_matrix/")
+dat2 <- Read10X(data.dir = "input/filtered_feature_bc_matrix/")
 ```
 
 - We next use the count matrix to create a Seurat object. 
@@ -157,3 +157,5 @@ dat2Obj[["percent.mt"]] <- PercentageFeatureSet(dat2Obj, pattern = "^mt-")
 # Visualize QC metrics as a violin plot
 VlnPlot(dat2Obj, features = c("nFeature_RNA", "nCount_RNA", "percent.mt"), ncol = 3)
 ```
+
+- Next, you can plot a FeatureScatter plot for visualising feature-feature relationships.
