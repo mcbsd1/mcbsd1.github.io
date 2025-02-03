@@ -158,7 +158,7 @@ dat2Obj[["percent.mt"]] <- PercentageFeatureSet(dat2Obj, pattern = "^mt-")
 VlnPlot(dat2Obj, features = c("nFeature_RNA", "nCount_RNA", "percent.mt"), ncol = 3)
 ```
 
-<img src="/assets/img/Violin_plot_1k_data.png" alt="gui1" width="800"/>
+<img src="/assets/img/Violin_plot_1k_data.png" alt="gui1" width="1200"/>
 
 - Next, you can plot a FeatureScatter plot for visualising feature-feature relationships.
 
@@ -168,3 +168,5 @@ plot1 <- FeatureScatter(dat2Obj, feature1 = "nCount_RNA", feature2 = "percent.mt
 plot2 <- FeatureScatter(dat2Obj, feature1 = "nCount_RNA", feature2 = "nFeature_RNA")
 plot1 + plot2
 ```
+
+<img src="/assets/img/FeatureScatter.png" alt="gui1" width="1200"/>
