@@ -178,10 +178,30 @@ plot1 + plot2
 
 ```
 dat2FilteredObj <- subset(dat2Obj, subset = nFeature_RNA > 200 & nFeature_RNA < 9000 &  percent.mt < 5)
+
+dat2FilteredObj
+# An object of class Seurat 
+# 18321 features across 1235 samples within 1 assay 
+# Active assay: RNA (18321 features, 0 variable features)
+#  1 layer present: counts
 ```
 
 Lets break it down:
 - `nFeature_RNA > 200`: Keeps cells that have more than 200 detected genes (features). This removes low-quality cells or empty droplets.
 - `Feature_RNA < 9000`: Removes cells with too many detected genes, which might indicate doublets (two cells captured in one droplet).
 - `percent.mt < 5`: Filters out cells where mitochondrial gene percentage is greater than 5%. High mitochondrial content often indicates damaged or dying cells.
+
+- With this command, the number of cells reduces to 1235.
+
+---
+Normalizing the data
+---
+
+- After removing unwanted cells from the dataset, the next step is to normalize the data.
+- By default, we employ a global-scaling normalization method `LogNormalize` that normalizes the feature expression measurements for each cell by the total expression, multiplies this by a scale factor (10,000 by default), and log-transforms the result.
+- Normalized values are stored in `dat2NormalisedObj[["RNA"]]$data`
+
+```
+dat2NormalisedObj <- NormalizeData(object = dat2FilteredObj, normalization.method = "LogNormalize", scale.factor = 10000)
+```
 
