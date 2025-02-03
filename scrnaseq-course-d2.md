@@ -102,7 +102,7 @@ cd cellranger_count_1k_mouse_kidney_CNIK_3pv3
 library(Seurat)
 ```
 
-- Press the green arrow key which says **Run Current Chunk**
+- Press the green arrow key on line 7 which says **Run Current Chunk** to load the Seurat library.
 
 <img src="/assets/img/rmarkdown-1.png" alt="gui1" width="800"/>
 
