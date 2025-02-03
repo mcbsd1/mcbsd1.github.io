@@ -102,7 +102,10 @@ cd cellranger_count_1k_mouse_kidney_CNIK_3pv3
 library(Seurat)
 ```
 
+- Press the green arrow key which says **Run Current Chunk**
+
 <img src="/assets/img/rmarkdown-1.png" alt="gui1" width="800"/>
+
 
 ---
 #### Setup the Seurat object
@@ -116,3 +119,41 @@ library(Seurat)
 dat2 <- Read10X(data.dir = "../input/filtered_feature_bc_matrix/")
 ```
 
+- We next use the count matrix to create a Seurat object. 
+
+```
+# Initialize the Seurat object with the raw (non-normalized data).
+dat2Obj <- CreateSeuratObject(counts = dat2, project = "1KmouseKidney", min.cells = 3, min.features = 200)
+
+dat2Obj
+## An object of class Seurat 
+## 18321 features across 1375 samples within 1 assay 
+## Active assay: RNA (18321 features, 0 variable features)
+##  1 layer present: counts
+```
+
+---
+#### QC and selecting cells for further analysis
+---
+
+- Seurat allows you to easily explore QC metrics and filter cells based on any user-defined criteria.
+- These includes:
+  - The number of unique genes detected in each cell.
+    - Low-quality cells or empty droplets will often have very few genes
+    - Cell doublets or multiplets may exhibit an aberrantly high gene count
+  - The percentage of reads that map to the mitochondrial genome.
+    - Low-quality / dying cells often exhibit extensive mitochondrial contamination
+    - We calculate mitochondrial QC metrics with the `PercentageFeatureSet()` function
+    - We use the set of all genes starting with `MT-` or `mt-` as a set of mitochondrial genes
+
+```
+# The [[ operator can add columns to object metadata.
+dat2Obj[["percent.mt"]] <- PercentageFeatureSet(dat2Obj, pattern = "^mt-")
+```
+
+- To visualize QC metrics, we use `VlnPlot()` function.
+
+```
+# Visualize QC metrics as a violin plot
+VlnPlot(dat2Obj, features = c("nFeature_RNA", "nCount_RNA", "percent.mt"), ncol = 3)
+```
