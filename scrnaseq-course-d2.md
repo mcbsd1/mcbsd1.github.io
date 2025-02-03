@@ -50,9 +50,14 @@ cd cellranger_count_1k_mouse_kidney_CNIK_3pv3
 
 - Click on `Quickconnect`
 - Navigate to the folder `scrnaseq-course/scrnaseq/results`
-- Create a folder on your local machine, called `scrnaseq-nextflow`
-- Now, Drag and Drop the files from the `results` folder in the remote server to your `scrnaseq-nextflow` folder on your lopcal machine.
-- Once the files are copied, these should be visible on your local machine under `scrnaseq-nextflow` folder.
+- Create a folder on your local machine, called `scrnaseq-nextflow`.
+- Create 4 folders within `scrnaseq-nextflow` folder:
+  - bin
+  - input
+  - output
+  - resources
+- Now, Drag and Drop the files from the `results` folder in the remote server to your `input` folder within `scrnaseq-nextflow` folder on your local machine.
+- Once the files are copied, these should be visible on your local machine under `input` folder.
 
 ---
 <img src="/assets/img/filezilla-login.png" alt="gui1" width="1200"/>
@@ -63,7 +68,7 @@ cd cellranger_count_1k_mouse_kidney_CNIK_3pv3
 ---
 ---
 
-- Once the counts have been downloaded into the `scrnaseq-nextflow` folder on your lopcal machine, start **RStudio** on Mac/Windows.
+- Once the counts have been downloaded into the `input` folder on your local machine, Start **RStudio** on Mac/Windows.
 
 ---
 <img src="/assets/img/rstudio.png" alt="gui1" width="1200"/>
@@ -89,7 +94,6 @@ cd cellranger_count_1k_mouse_kidney_CNIK_3pv3
 ---
 #### Load libraries
 ---
----
 
 - Copy the line in your markdown document:
 
@@ -100,5 +104,15 @@ library(Seurat)
 
 <img src="/assets/img/rmarkdown-1.png" alt="gui1" width="800"/>
 
+---
+#### Setup the Seurat object
+---
 
+- We start by reading in the data. The `Read10X()` function reads in the output of the cellranger pipeline from 10X, returning a unique molecular identified (UMI) count matrix.
+- The values in this matrix represent the number of molecules for each feature (i.e. gene; row) that are detected in each cell (column).
+
+```
+# Load the 1k mouse kidney dataset
+dat2 <- Read10X(data.dir = "../input/filtered_feature_bc_matrix/")
+```
 
