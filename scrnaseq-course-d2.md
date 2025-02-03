@@ -133,7 +133,7 @@ dat2Obj
 ```
 
 ---
-#### QC and selecting cells for further analysis
+#### QC and filtering cells for further analysis
 ---
 
 - Seurat allows you to easily explore QC metrics and filter cells based on any user-defined criteria.
@@ -170,3 +170,18 @@ plot1 + plot2
 ```
 
 <img src="/assets/img/FeatureScatter.png" alt="gui1" width="1200"/>
+
+<br>
+
+- Now, we will filter cells that have unique feature counts over 9000 or less than 200
+- We filter cells that have >5% mitochondrial counts
+
+```
+dat2FilteredObj <- subset(dat2Obj, subset = nFeature_RNA > 200 & nFeature_RNA < 9000 &  percent.mt < 5)
+```
+
+Lets break it down:
+- `nFeature_RNA > 200`: Keeps cells that have more than 200 detected genes (features). This removes low-quality cells or empty droplets.
+- `Feature_RNA < 9000`: Removes cells with too many detected genes, which might indicate doublets (two cells captured in one droplet).
+- `percent.mt < 5`: Filters out cells where mitochondrial gene percentage is greater than 5%. High mitochondrial content often indicates damaged or dying cells.
+
