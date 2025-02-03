@@ -161,3 +161,10 @@ VlnPlot(dat2Obj, features = c("nFeature_RNA", "nCount_RNA", "percent.mt"), ncol 
 <img src="/assets/img/Violin_plot_1k_data.png" alt="gui1" width="800"/>
 
 - Next, you can plot a FeatureScatter plot for visualising feature-feature relationships.
+
+```
+# Plot FeatureScatter plot
+plot1 <- FeatureScatter(dat2Obj, feature1 = "nCount_RNA", feature2 = "percent.mt")
+plot2 <- FeatureScatter(dat2Obj, feature1 = "nCount_RNA", feature2 = "nFeature_RNA")
+plot1 + plot2
+```
