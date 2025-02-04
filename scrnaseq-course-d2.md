@@ -242,3 +242,13 @@ all.genes <- rownames(dat2Normalised2Obj)
 dat2ScaledObj <- ScaleData(object = dat2Normalised2Obj, features = all.genes)
 ```
 
+<details>
+<summary><b>How can I remove unwanted sources of variation</b></summary>
+
+- To remove unwanted sources of variation from a single-cell dataset, such as `percent.mt`, use `vars.to.regress` to include these:
+
+```
+dat2ScaledObj <- ScaleData(object = dat2Normalised2Obj, features = all.genes, vars.to.regress = "percent.mt")
+```
+
+</details>
