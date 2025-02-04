@@ -233,3 +233,12 @@ CombinePlots(plots = list(plot3, plot4))
 
 - The `ScaleData` function in Seurat is used to normalize and scale gene expression values across cells.
 - Additionally, it can **regress out unwanted sources of variation**, such as sequencing depth (`nUMI`) or mitochondrial gene percentage (`percent.mito`), helping to remove technical artifacts.
+- By default, only variable features are scaled.
+- But if you observe, in out script, we have used `rownames(dat2Normalised2Obj)` which applies scaling to all genes which is stored in `all.genes` object.
+- This is then applied to `ScaleData` function which uses `all.genes` as features for scaling.
+
+```
+all.genes <- rownames(dat2Normalised2Obj)
+dat2ScaledObj <- ScaleData(object = dat2Normalised2Obj, features = all.genes)
+```
+
