@@ -207,3 +207,12 @@ dat2NormalisedObj <- NormalizeData(object = dat2FilteredObj, normalization.metho
 ```
 
 - The use of `SCTransform` replaces the need to run `NormalizeData`, `FindVariableFeatures`, or `ScaleData`.
+
+
+---
+#### Identification of highly variable features (feature selection)
+---
+
+- We next calculate a subset of features (genes) that exhibit high cell-to-cell variation in the dataset.
+- These are the features those are highly expressed in some cells, and lowly expressed in others.
+- It has been found [Brennecke et al. Nat Methods.2013](https://www.nature.com/articles/nmeth.2645) that focusing on these genes in downstream analysis helps to highlight biological signal in single-cell datasets.
