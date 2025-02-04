@@ -206,3 +206,4 @@ Lets break it down:
 dat2NormalisedObj <- NormalizeData(object = dat2FilteredObj, normalization.method = "LogNormalize", scale.factor = 10000)
 ```
 
+- The use of `SCTransform` replaces the need to run `NormalizeData`, `FindVariableFeatures`, or `ScaleData`.
