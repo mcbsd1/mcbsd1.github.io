@@ -193,8 +193,9 @@ Lets break it down:
 
 - With this command, the number of cells reduces to 1235.
 
+
 ---
-Normalizing the data
+#### Normalizing the data
 ---
 
 - After removing unwanted cells from the dataset, the next step is to normalize the data.
