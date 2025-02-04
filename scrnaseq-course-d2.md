@@ -226,3 +226,10 @@ CombinePlots(plots = list(plot3, plot4))
 ```
 
 <img src="/assets/img/VariableGenesPlot.png" alt="gui1" width="1200"/>
+
+---
+#### Scaling the data
+---
+
+- The `ScaleData` function in Seurat is used to normalize and scale gene expression values across cells.
+- Additionally, it can **regress out unwanted sources of variation**, such as sequencing depth (`nUMI`) or mitochondrial gene percentage (`percent.mito`), helping to remove technical artifacts.
