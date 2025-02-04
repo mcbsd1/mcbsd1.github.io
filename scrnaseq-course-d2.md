@@ -224,3 +224,5 @@ plot3 <- VariableFeaturePlot(dat2Normalised2Obj)
 plot4 <- LabelPoints(plot = plot3, points = top10, repel = TRUE)
 CombinePlots(plots = list(plot3, plot4))
 ```
+
+<img src="/assets/img/VariableGenesPlot.png" alt="gui1" width="1200"/>
