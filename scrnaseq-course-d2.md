@@ -291,3 +291,26 @@ Positive:  Abca13, Fli1, Ldb2, Fbxl7, Sgms2
 Negative:  Nphs1, Nphs2, Ptpro, Wt1os, Nebl
 ```
 
+- `DimHeatmap()` allows for easy exploration of the primary sources of heterogeneity in a dataset, and can be useful when trying to decide which PCs to include for further downstream analyses.
+
+```
+DimHeatmap(
+    object = dat2Scaled2Obj, 
+    dims = 1, 
+    balanced = TRUE
+)
+```
+
+<img src="/assets/img/PC1_dimheatmap.png" alt="gui1" width="1200"/>
+
+- Now, use dims 1 to 15 to plot 15 PCs to observe which PCs contribute to sources of variation in the dataset.
+
+```
+DimHeatmap(
+    object = dat2Scaled2Obj, 
+    dims = 1:15, 
+    balanced = TRUE
+)
+```
+
+<img src="/assets/img/PC1-15_dimheatmap.png" alt="gui1" width="1200"/>
