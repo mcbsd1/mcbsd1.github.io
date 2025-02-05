@@ -251,3 +251,15 @@ dat2ScaledObj <- ScaleData(object = dat2Normalised2Obj, features = all.genes)
 <pre><span style="color:crimson;">dat2ScaledObj <- ScaleData(object = dat2Normalised2Obj, features = all.genes, vars.to.regress = "percent.mt")</span></pre>
 
 </details>
+
+---
+#### Perform linear dimensional reduction
+---
+
+- Next we perform PCA on the scaled data.
+- By default, only the previously determined variable features are used as input, but can be defined using `features` argument if you wish to choose a different subset.
+
+```
+dat2Scaled2Obj <- RunPCA(object = dat2ScaledObj, features = VariableFeatures(object = dat2ScaledObj), do.print = TRUE, pcs.print = 1:5, genes.print = 5)
+```
+
