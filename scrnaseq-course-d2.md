@@ -314,3 +314,23 @@ DimHeatmap(
 ```
 
 <img src="/assets/img/PC1-15_dimheatmap.png" alt="gui1" width="1200"/>
+
+---
+#### Determining dimensionality
+---
+
+- After running PCA using `RunPCA()`, you need to determine how many PCs to retain for clustering and downstream analysis.
+- One common method is using the Elbow Plot.
+- The top principal components represents highest variations in the dataset.
+- So, how many components should we choose to include? 10? 20? 100?
+- In ‘Elbow plot’ it ranks principle components based on the percentage of variance explained by each one.
+
+```
+ElbowPlot(dat2Scaled2Obj)
+```
+
+<img src="/assets/img/elbowplot.png" alt="gui1" width="1200"/>
+
+- However, if we choose to include `ndims = 50`, then the elbow plot changes and includes 50 PCs.
+
+<img src="/assets/img/elbowplot-50.png" alt="gui1" width="1200"/>
