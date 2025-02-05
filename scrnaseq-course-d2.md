@@ -331,10 +331,17 @@ ElbowPlot(dat2Scaled2Obj)
 
 <img src="/assets/img/elbowplot.png" alt="gui1" width="1200"/>
 
-- However, if we choose to include `ndims = 50`, then the elbow plot changes and includes 50 PCs.
+
+- If we are considering going with the default settings with `ndims = 20`, then we can clearly see that at the elbow point is at PC 11 which accounts for most variation in the dataset.
+
+- However, if we choose to include `ndims = 50`, then the elbow plot changes and includes 50 PCs. 
 
 ```
 ElbowPlot(dat2Scaled2Obj, ndims = 50)
 ```
 
 <img src="/assets/img/elbowplot-50.png" alt="gui1" width="1200"/>
+
+- Now, this gives us a much broader picture and also shows more PCs are contributing to variation beyond PC 11.
+- With this plot, we can keep the value between PC 21-25.
+- In this tutorial, I have chosen PC 25 to stretch the limit and include smaller variance. But the value of 21 will also work fine. 
