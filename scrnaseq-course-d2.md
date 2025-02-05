@@ -268,7 +268,26 @@ dat2Scaled2Obj <- RunPCA(object = dat2ScaledObj, features = VariableFeatures(obj
 - `pcs.print = 1:5` displays the results for PC1 to PC5 (i.e., the first five principal components).
 - PC1 (Principal Component 1) is the most important axes of variation.
 - PC2, PC3, PC4, etc. explain additional variation in the data.
-- Top Positive Genes **(e.g., Ldb2, Ebf1, Prkg1, Meis2, etc.)** are more highly expressed in one subset of cells.
-- Top Negative Genes **(e.g., Slc27a2, Keg1, Sugct, etc.)** are more highly expressed in another subset.
+- Top Positive Genes **(e.g., Ldb2, Ebf1, Prkg1, Meis2)** are more highly expressed in one subset of cells.
+- Top Negative Genes **(e.g., Slc27a2, Keg1, Sugct)** are more highly expressed in another subset.
 - PC1 may capture a major biological signal, such as cell type differences.
 - If PC2 separates a different cell population, it might represent a different biological process, like a cell cycle state or differentiation.
+
+```
+PC_ 1 
+Positive:  Ldb2, Ebf1, Dlc1, Prkg1, Meis2 
+Negative:  Slc27a2, Keg1, Gramd1b, Gm42397, Sugct 
+PC_ 2 
+Positive:  Slit2, Prdm16, Rgs6, Slc16a7, Me3 
+Negative:  Slc7a12, Aadat, Ldb2, Gm20400, Slc22a19 
+PC_ 3 
+Positive:  Sox5, Lama2, Kcnt2, Cfh, Svep1 
+Negative:  Adgrl4, Ptprb, Flt1, Emcn, St6galnac3 
+PC_ 4 
+Positive:  Chrm3, Slc7a12, Cd36, Mettl7a2, Gm30551 
+Negative:  Nox4, Bmp6, Bnc2, Slc34a1, Acsm2 
+PC_ 5 
+Positive:  Abca13, Fli1, Ldb2, Fbxl7, Sgms2 
+Negative:  Nphs1, Nphs2, Ptpro, Wt1os, Nebl
+```
+
