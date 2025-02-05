@@ -242,7 +242,6 @@ all.genes <- rownames(dat2Normalised2Obj)
 dat2ScaledObj <- ScaleData(object = dat2Normalised2Obj, features = all.genes)
 ```
 
-<br>
 
 <details>
 <summary><b>How can I remove unwanted sources of variation</b></summary>
