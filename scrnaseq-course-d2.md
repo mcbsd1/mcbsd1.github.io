@@ -263,3 +263,12 @@ dat2ScaledObj <- ScaleData(object = dat2Normalised2Obj, features = all.genes)
 dat2Scaled2Obj <- RunPCA(object = dat2ScaledObj, features = VariableFeatures(object = dat2ScaledObj), do.print = TRUE, pcs.print = 1:5, genes.print = 5)
 ```
 
+- This command uses only the highly variable genes (`VariableFeatures(object = dat2ScaledObj)`) instead of all genes to reduce noise and improve clustering.
+- `do.print = TRUE` prints the top genes contributing to each principal component (PC).
+- `pcs.print = 1:5` displays the results for PC1 to PC5 (i.e., the first five principal components).
+- PC1 (Principal Component 1) is the most important axes of variation.
+- PC2, PC3, PC4, etc. explain additional variation in the data.
+- Top Positive Genes **(e.g., Ldb2, Ebf1, Prkg1, Meis2, etc.)** are more highly expressed in one subset of cells.
+- Top Negative Genes **(e.g., Slc27a2, Keg1, Sugct, etc.)** are more highly expressed in another subset.
+- PC1 may capture a major biological signal, such as cell type differences.
+- If PC2 separates a different cell population, it might represent a different biological process, like a cell cycle state or differentiation.
