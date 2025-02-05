@@ -361,3 +361,6 @@ ElbowPlot(dat2Scaled2Obj, ndims = 50)
   - SNN score = Number of shared neighbors / Minimum kNN list size
   - SNN score = 2 / 4 = 0.5
 - If two cells share many of their nearest neighbors, their SNN score is high, and they are more likely to belong to the same cluster.
+
+<img src="/assets/img/nearest-neighbour.png" alt="gui1" width="1200"/>
+
