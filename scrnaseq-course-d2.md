@@ -345,3 +345,19 @@ ElbowPlot(dat2Scaled2Obj, ndims = 50)
 - Now, this gives us a much broader picture and also shows more PCs are contributing to variation beyond PC 11.
 - With this plot, we can keep the value between PC 21-25.
 - In this tutorial, I have chosen PC 25 to stretch the limit and include smaller variance. But the value of 21 will also work fine. 
+
+---
+#### Clustering
+---
+
+- Seurat applies a graph-based clustering approach, called Shared Nearest Neighbors (SNN).
+- How the SNN Score is Computed:
+  - If cell A’s neighbor list and cell B’s neighbor list share many cells, they are likely to be in the same cluster.
+  - The SNN score (edge weight) is higher if two cells have more shared neighbors.
+- Example:
+  - Cell A’s neighbors: {B, C, D, E}
+  - Cell B’s neighbors: {A, C, D, F}
+  🔹 Cell A and Cell B share: {C, D}
+  🔹 SNN score = Number of shared neighbors / Minimum kNN list size
+  🔹 SNN score = 2 / 4 = 0.5
+- If two cells share many of their nearest neighbors, their SNN score is high, and they are more likely to belong to the same cluster.
