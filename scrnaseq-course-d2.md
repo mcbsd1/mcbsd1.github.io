@@ -357,7 +357,7 @@ ElbowPlot(dat2Scaled2Obj, ndims = 50)
 - Example:
   - Cell A’s neighbors: {B, C, D, E}
   - Cell B’s neighbors: {A, C, D, F}
-  🔹 Cell A and Cell B share: {C, D}
-  🔹 SNN score = Number of shared neighbors / Minimum kNN list size
-  🔹 SNN score = 2 / 4 = 0.5
+  - Cell A and Cell B share: {C, D}
+  - SNN score = Number of shared neighbors / Minimum kNN list size
+  - SNN score = 2 / 4 = 0.5
 - If two cells share many of their nearest neighbors, their SNN score is high, and they are more likely to belong to the same cluster.
