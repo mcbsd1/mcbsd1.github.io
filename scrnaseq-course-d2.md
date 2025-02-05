@@ -333,4 +333,8 @@ ElbowPlot(dat2Scaled2Obj)
 
 - However, if we choose to include `ndims = 50`, then the elbow plot changes and includes 50 PCs.
 
+```
+ElbowPlot(dat2Scaled2Obj, ndims = 50)
+```
+
 <img src="/assets/img/elbowplot-50.png" alt="gui1" width="1200"/>
