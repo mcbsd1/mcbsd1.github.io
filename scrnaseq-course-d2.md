@@ -400,3 +400,8 @@ dat2UMAP <- RunUMAP(seuratFindClusters, reduction = "pca", dims = 1:25, n.neighb
 - `n.neighbors` defines the number of nearest neighbors considered when constructing the UMAP graph.
 - Larger values capture broader structures, while smaller values focus on finer details.
 
+`n.neighbors` Value|Effect on UMAP|When to Use?
+|:----:|:----------|:-----------|
+Low (5-15)|Captures local structure, fine details|Small datasets, cluster refinement|
+Default (30)|Balanced between local and global structure|General use case|
+High (50-100)|Preserves global relationships, reduces fragmentation|Large datasets, broader clusters|
