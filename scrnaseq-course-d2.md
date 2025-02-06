@@ -364,3 +364,6 @@ ElbowPlot(dat2Scaled2Obj, ndims = 50)
 
 <img src="/assets/img/nearest-neighbour.png" alt="gui1" width="1200"/>
 
+- So, the first step is performed using the `FindNeighbors()` function, and takes as input the previously defined dimensionality of the dataset (first 25 PCs).
+- To cluster the cells, we next apply modularity optimization techniques such as the Louvain algorithm (default) or SLM to iteratively group cells together.
+- The `FindClusters()` function implements this procedure, and contains a resolution parameter that sets the ‘granularity’ of the downstream clustering, with increased values leading to a greater number of clusters.
