@@ -370,6 +370,7 @@ ElbowPlot(dat2Scaled2Obj, ndims = 50)
 
 
 - Run the following commands:
+
 ```
 seuratFindNeighbors <- FindNeighbors(
     dat2Scaled2Obj,
