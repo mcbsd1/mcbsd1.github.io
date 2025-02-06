@@ -393,7 +393,7 @@ seuratFindClusters <- FindClusters(object = seuratFindNeighbors)
 - Therefore, cells that are grouped together within graph-based clusters determined above should co-localize on these dimension reduction plots.
 
 ```
-dat2UMAP <- RunUMAP(seuratFindClusters, reduction = "pca", dims = 1:25, n.neighbors = 30L, min.dist = 0.3, seed.use = 123456L)
+dat2UMAP <- RunUMAP(seuratFindClusters, reduction = "pca", dims = 1:25, n.neighbors = 10, min.dist = 0.3, seed.use = 123456L)
 ```
 
 - If you see that we have used 25 PCs and `n.neighbors` as 30L
@@ -405,3 +405,4 @@ dat2UMAP <- RunUMAP(seuratFindClusters, reduction = "pca", dims = 1:25, n.neighb
 Low (5-15)|Captures local structure, fine details|Small datasets, cluster refinement|
 Default (30)|Balanced between local and global structure|General use case|
 High (50-100)|Preserves global relationships, reduces fragmentation|Large datasets, broader clusters|
+
