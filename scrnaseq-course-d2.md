@@ -392,7 +392,7 @@ seuratFindClusters <- FindClusters(object = seuratFindNeighbors)
 - The goal of these algorithms is to learn underlying structure in the dataset, in order to place similar cells together in low-dimensional space.
 - Therefore, cells that are grouped together within graph-based clusters determined above should co-localize on these dimension reduction plots.
 
-```
+```python
 dat2UMAP <- RunUMAP(seuratFindClusters, reduction = "pca", dims = 1:25, n.neighbors = 10, min.dist = 0.3, seed.use = 123456L)
 ```
 
