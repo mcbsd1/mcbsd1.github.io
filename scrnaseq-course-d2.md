@@ -369,7 +369,7 @@ ElbowPlot(dat2Scaled2Obj, ndims = 50)
 - The `FindClusters()` function implements this procedure, and contains a resolution parameter that sets the ‘granularity’ of the downstream clustering, with increased values leading to a greater number of clusters.
 
 
-<code style="color : cyan">Run the following commands:</code>
+$${\color{red}Run the following commands:}$$
 
 ```
 seuratFindNeighbors <- FindNeighbors(
