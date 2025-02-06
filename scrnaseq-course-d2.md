@@ -383,3 +383,20 @@ seuratFindNeighbors <- FindNeighbors(
 
 seuratFindClusters <- FindClusters(object = seuratFindNeighbors)
 ```
+
+---
+#### Non-linear dimensional reduction
+---
+
+- Seurat offers several non-linear dimensional reduction techniques, such as tSNE and UMAP, to visualize and explore these datasets.
+- The goal of these algorithms is to learn underlying structure in the dataset, in order to place similar cells together in low-dimensional space.
+- Therefore, cells that are grouped together within graph-based clusters determined above should co-localize on these dimension reduction plots.
+
+```
+dat2UMAP <- RunUMAP(seuratFindClusters, reduction = "pca", dims = 1:25, n.neighbors = 30L, min.dist = 0.3, seed.use = 123456L)
+```
+
+- If you see that we have used 25 PCs and `n.neighbors` as 30L
+- `n.neighbors` defines the number of nearest neighbors considered when constructing the UMAP graph.
+- Larger values capture broader structures, while smaller values focus on finer details.
+
