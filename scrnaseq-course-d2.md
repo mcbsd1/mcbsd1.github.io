@@ -160,6 +160,14 @@ VlnPlot(dat2Obj, features = c("nFeature_RNA", "nCount_RNA", "percent.mt"), ncol 
 
 <img src="/assets/img/Violin_plot_1k_data.png" alt="gui1" width="1200"/>
 
+<details>
+<summary><b>Try using ^MT- as pattern. What do you get?</b></summary>
+
+<pre><span style="color:crimson;">dat2Obj[["percent.mt"]] <- PercentageFeatureSet(dat2Obj, pattern = "^MT-")</span></pre>
+
+</details>
+
+
 - Next, you can plot a FeatureScatter plot for visualising feature-feature relationships.
 
 ```
