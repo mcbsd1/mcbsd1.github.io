@@ -368,6 +368,8 @@ ElbowPlot(dat2Scaled2Obj, ndims = 50)
 - To cluster the cells, we next apply modularity optimization techniques such as the Louvain algorithm (default) or SLM to iteratively group cells together.
 - The `FindClusters()` function implements this procedure, and contains a resolution parameter that sets the ‘granularity’ of the downstream clustering, with increased values leading to a greater number of clusters.
 
+
+- Run the following commands:
 ```
 seuratFindNeighbors <- FindNeighbors(
     dat2Scaled2Obj,
