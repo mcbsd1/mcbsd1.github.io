@@ -367,3 +367,16 @@ ElbowPlot(dat2Scaled2Obj, ndims = 50)
 - So, the first step is performed using the `FindNeighbors()` function, and takes as input the previously defined dimensionality of the dataset (first 25 PCs).
 - To cluster the cells, we next apply modularity optimization techniques such as the Louvain algorithm (default) or SLM to iteratively group cells together.
 - The `FindClusters()` function implements this procedure, and contains a resolution parameter that sets the ‘granularity’ of the downstream clustering, with increased values leading to a greater number of clusters.
+
+```
+seuratFindNeighbors <- FindNeighbors(
+    dat2Scaled2Obj,
+    reduction = "pca",
+    dims = 1:25,
+    do.plot = FALSE,
+    graph.name = NULL,
+    k.param = 30
+)
+
+seuratFindClusters <- FindClusters(object = seuratFindNeighbors)
+```
