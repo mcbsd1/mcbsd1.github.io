@@ -406,3 +406,10 @@ Low (5-15)|Captures local structure, fine details|Small datasets, cluster refine
 Default (30)|Balanced between local and global structure|General use case|
 High (50-100)|Preserves global relationships, reduces fragmentation|Large datasets, broader clusters|
 
+Based on dataset size:
+
+Dataset Size|Recommended `n.neighbors`|
+|:----:|:----------|
+<1,500 cells|10-20|
+1,500 - 10,000 cells|30-50|
+>10,000 cells|50-100|
