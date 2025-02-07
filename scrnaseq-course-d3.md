@@ -42,3 +42,11 @@ author: "Sumukh Deshpande"
 
 - Integration of single-cell sequencing datasets, for example across experimental batches, donors, or conditions, is often an important step in scRNA-seq workflows.
 - Integrative analysis can help to match shared cell types and states across datasets, which can boost statistical power, and most importantly, facilitate accurate comparative analysis across datasets.
+
+---
+#### Experiment
+---
+
+- Kidney processed sequencing data have been taken from GEO database (GSE131685).
+- Kidney specimens were collected fresh, dissected and digested into single cells from organ donors (two males and one female) aged 57–65 years.
+- Paper reference: [Liao et al. Sci Data. 2020](https://www.nature.com/articles/s41597-019-0351-8)
