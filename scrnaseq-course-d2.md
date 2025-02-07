@@ -513,4 +513,16 @@ DimPlot(dat2UMAP, reduction = "pca")
 <img src="/assets/img/pcaplot.png" alt="gui1" width="1200"/>
 
 
+---
+#### DoHeatmap function
+---
 
+- The `DoHeatmap()` function in Seurat is used to generate a heatmap of gene expression across different cell clusters or groups.
+- It is particularly useful for visualizing the expression patterns of top marker genes across clusters.
+
+```
+DoHeatmap(dat2UMAP, features = VariableFeatures(dat2UMAP)[1:100], cells = 1:500, size = 4,
+          angle = 90) + NoLegend()
+```
+
+<img src="/assets/img/DoHeatmap.png" alt="gui1" width="1200"/>
