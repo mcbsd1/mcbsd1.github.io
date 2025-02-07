@@ -34,3 +34,11 @@ author: "Sumukh Deshpande"
   - Cell-type annotation using SingleR.
 
 
+---
+
+### scRNAseq Data Integration
+---
+---
+
+- Integration of single-cell sequencing datasets, for example across experimental batches, donors, or conditions, is often an important step in scRNA-seq workflows.
+- Integrative analysis can help to match shared cell types and states across datasets, which can boost statistical power, and most importantly, facilitate accurate comparative analysis across datasets.
