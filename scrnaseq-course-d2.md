@@ -479,4 +479,19 @@ VlnPlot(dat2UMAP, features = genes)
 
 <img src="/assets/img/VlnPlot.png" alt="gui1" width="1200"/>
 
+---
+#### RidgePlot function
+---
+
+- The `RidgePlot()` function in Seurat generates ridge plots to visualize the distribution of gene expression across different clusters or groups of cells. 
+- It is useful for comparing the expression levels of genes in different cell populations.
+
+```
+genes = c("Slc26a4", "Slc34a1", "Slc8a1", "Ptpro", "Csmd1", "Top2a")
+RidgePlot(dat2UMAP, features = genes, ncol = 2)
+```
+
+<img src="/assets/img/RidgePlot.png" alt="gui1" width="1200"/>
+
+
 
