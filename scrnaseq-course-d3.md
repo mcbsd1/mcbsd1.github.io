@@ -50,3 +50,27 @@ author: "Sumukh Deshpande"
 - Kidney processed sequencing data have been taken from GEO database (GSE131685).
 - Kidney specimens were collected fresh, dissected and digested into single cells from organ donors (two males and one female) aged 57–65 years.
 - Paper reference: [Liao et al. Sci Data. 2020](https://www.nature.com/articles/s41597-019-0351-8)
+- <u>Input files:</u>
+  - Patient 1
+    - GSM4145204_kidney1_barcodes.tsv.gz
+    - GSM4145204_kidney1_features.tsv.gz
+    - GSM4145204_kidney1_matrix.mtx.gz
+  - Patient 2
+    - GSM4145205_kidney2_barcodes.tsv.gz
+    - GSM4145205_kidney2_features.tsv.gz
+    - GSM4145205_kidney2_matrix.mtx.gz
+  - Patient 3
+    - GSM4145206_kidney3_barcodes.tsv.gz
+    - GSM4145206_kidney3_features.tsv.gz
+    - GSM4145206_kidney3_matrix.mtx.gz
+
+
+---
+#### Setup and QC
+---
+
+Load datasets:
+
+```
+
+```
