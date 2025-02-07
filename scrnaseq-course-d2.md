@@ -442,5 +442,7 @@ DimPlot(dat2UMAP, reduction = "umap")
 - It helps in identifying the spatial distribution of gene expression across clusters or cell populations.
 
 ```
-
+FeaturePlot(dat2UMAP, features = c("Slc26a4", "Slc34a1", "Slc8a1", "Ptpro", "Csmd1", "Top2a"))
 ```
+
+<img src="/assets/img/FeaturePlot.png" alt="gui1" width="1200"/>
