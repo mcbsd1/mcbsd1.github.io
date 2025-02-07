@@ -450,3 +450,19 @@ FeaturePlot(dat2UMAP, features = c("Slc26a4", "Slc34a1", "Slc8a1", "Ptpro", "Csm
 ```
 
 <img src="/assets/img/FeaturePlot.png" alt="gui1" width="1200"/>
+
+---
+#### DotPlot function
+---
+
+- The `FeaturePlot()` function in Seurat is used to visualize the expression of one or more genes (features) on a UMAP.
+- It helps in identifying the spatial distribution of gene expression across clusters or cell populations.
+
+```
+genes = c("Slc26a4", "Slc34a1", "Slc8a1", "Ptpro", "Csmd1", "Top2a")
+DotPlot(dat2UMAP, features = genes) + RotatedAxis()
+```
+
+<img src="/assets/img/DotPlot.png" alt="gui1" width="1200"/>
+
+<img src="/assets/img/FeaturePlot.png" alt="gui1" width="1200"/>
