@@ -465,4 +465,4 @@ DotPlot(dat2UMAP, features = genes) + RotatedAxis()
 
 <img src="/assets/img/DotPlot.png" alt="gui1" width="1200"/>
 
-<img src="/assets/img/FeaturePlot.png" alt="gui1" width="1200"/>
+
