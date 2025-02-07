@@ -493,5 +493,24 @@ RidgePlot(dat2UMAP, features = genes, ncol = 2)
 
 <img src="/assets/img/RidgePlot.png" alt="gui1" width="1200"/>
 
+---
+#### DimPlot function
+---
+
+- The `DimPlot()` function in Seurat is used to visualize cells in a reduced dimensional space (e.g., UMAP, t-SNE, or PCA) and color them based on their cluster identity or metadata attributes.
+- It is useful for identifying and interpreting cell populations in single-cell RNA-seq analysis.
+
+Syntax:
+```
+DimPlot(object, reduction = "umap", group.by = "ident", label = TRUE, pt.size = 1)
+```
+
+For example-
+```
+DimPlot(dat2UMAP, reduction = "pca")
+```
+
+<img src="/assets/img/pcaplot.png" alt="gui1" width="1200"/>
+
 
 
