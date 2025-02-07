@@ -455,8 +455,8 @@ FeaturePlot(dat2UMAP, features = c("Slc26a4", "Slc34a1", "Slc8a1", "Ptpro", "Csm
 #### DotPlot function
 ---
 
-- The `FeaturePlot()` function in Seurat is used to visualize the expression of one or more genes (features) on a UMAP.
-- It helps in identifying the spatial distribution of gene expression across clusters or cell populations.
+- The `DotPlot()` function in Seurat is used to visualize the expression levels of multiple genes across different clusters in a dot plot format.
+- It is particularly useful for comparing marker gene expression across cell clusters and assigning cell types.
 
 ```
 genes = c("Slc26a4", "Slc34a1", "Slc8a1", "Ptpro", "Csmd1", "Top2a")
@@ -464,5 +464,19 @@ DotPlot(dat2UMAP, features = genes) + RotatedAxis()
 ```
 
 <img src="/assets/img/DotPlot.png" alt="gui1" width="1200"/>
+
+---
+#### VlnPlot function
+---
+
+- The `VlnPlot()` function in Seurat creates violin plots to visualize the distribution of gene expression levels across different clusters or groups of cells.
+- It helps in identifying differences in gene expression between clusters.
+
+```
+genes = c("Slc26a4", "Slc34a1", "Slc8a1", "Ptpro", "Csmd1", "Top2a")
+VlnPlot(dat2UMAP, features = genes)
+```
+
+<img src="/assets/img/VlnPlot.png" alt="gui1" width="1200"/>
 
 
