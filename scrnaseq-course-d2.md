@@ -421,3 +421,21 @@ DimPlot(dat2UMAP, reduction = "umap")
 ```
 
 <img src="/assets/img/umap.png" alt="gui1" width="1200"/>
+
+<br>
+
+---
+### Data Visualisation
+---
+
+- There are several data visualisation methods and functions in Seurat which are used for visualising marker feature expression.
+- This can be achieved using:
+  - `FeaturePlot()`
+  - `DotPlot()`
+  - `VlnPlot()`
+  - `RidgePlot()`
+  - `DimPlot()`
+  - `DoHeatmap()`
+
+
+- 
