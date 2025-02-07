@@ -28,3 +28,8 @@ author: "Sumukh Deshpande"
     - Other visualisation functions to create plots for identifying differences in gene expression between clusters.
 
 
+- Today we will cover:
+  - Integrating single-cell datasets.
+  - Differential Gene Expression analysis and marker selection.
+  - Cell-type annotation using SingleR.
+  - 
