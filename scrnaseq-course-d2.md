@@ -438,6 +438,10 @@ DimPlot(dat2UMAP, reduction = "umap")
   - `DoHeatmap()`
 
 
+---
+#### FeaturePlot function
+---
+
 - The `FeaturePlot()` function in Seurat is used to visualize the expression of one or more genes (features) on a UMAP.
 - It helps in identifying the spatial distribution of gene expression across clusters or cell populations.
 
