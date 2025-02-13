@@ -47,27 +47,32 @@ author: "Sumukh Deshpande"
 #### Experiment
 ---
 
-- Kidney processed sequencing data have been taken from GEO database (GSE131685).
-- Kidney specimens were collected fresh, dissected and digested into single cells from organ donors (two males and one female) aged 57–65 years.
-- Paper reference: [Liao et al. Sci Data. 2020](https://www.nature.com/articles/s41597-019-0351-8)
+- Cancer NSCLC processed sequencing data have been taken from GEO database (GSE117570).
+- 4 early‐stage non‐small cell lung cancer (NSCLC) patients.
+- The Cell Ranger Single Cell Software Suite v.2.0.1 was used to perform sample de‐multiplexing, alignment, filtering, and UMI counting.
+- Paper reference: [Qianqian et al. Cancer Medicine. 2019](https://pmc.ncbi.nlm.nih.gov/articles/PMC6558497/)
 - <u>Input files:</u>
-  - Patient 1
-    - GSM4145204_kidney1_barcodes.tsv.gz
-    - GSM4145204_kidney1_features.tsv.gz
-    - GSM4145204_kidney1_matrix.mtx.gz
-  - Patient 2
-    - GSM4145205_kidney2_barcodes.tsv.gz
-    - GSM4145205_kidney2_features.tsv.gz
-    - GSM4145205_kidney2_matrix.mtx.gz
-  - Patient 3
-    - GSM4145206_kidney3_barcodes.tsv.gz
-    - GSM4145206_kidney3_features.tsv.gz
-    - GSM4145206_kidney3_matrix.mtx.gz
-
+  - Patient 1 - Normal
+    - GSM3304008_P1_Normal_processed_data.txt
+  - Patient 1 - Tumor
+    - GSM3304007_P1_Tumor_processed_data.txt
+  - Patient 2 - Normal
+    - GSM3304010_P2_Normal_processed_data.txt
+  - Patient 2 - Tumor
+    - GSM3304009_P2_Tumor_processed_data.txt
+  - Patient 3 - Normal
+    - GSM3304012_P3_Normal_processed_data.txt
+  - Patient 3 - Tumor
+    - GSM3304011_P3_Tumor_processed_data.txt
+  - Patient 4 - Normal
+    - GSM3304014_P4_Normal_processed_data.txt
+  - Patient 4 - Tumor
+    - GSM3304013_P4_Tumor_processed_data.txt
 
 ---
 #### Setup and QC
 ---
+
 
 Load datasets:
 
