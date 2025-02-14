@@ -223,11 +223,12 @@ Follow the steps to generate doublet marked objects for rest of the samples.
 
 ```
 p1tumorSinglets <- subset(p1tumorFilteredDoublet, subset = DF_hi.lo == "Singlet")
-p1normalSinglets <- subset(p1tumorFilteredDoublet, subset = DF_hi.lo == "Singlet")
-p2tumorSinglets <- subset(p1tumorFilteredDoublet, subset = DF_hi.lo == "Singlet")
-p2normalSinglets <- subset(p1tumorFilteredDoublet, subset = DF_hi.lo == "Singlet")
-p3tumorSinglets <- subset(p1tumorFilteredDoublet, subset = DF_hi.lo == "Singlet")
-p3normalSinglets <- subset(p1tumorFilteredDoublet, subset = DF_hi.lo == "Singlet")
-p4tumorSinglets <- subset(p1tumorFilteredDoublet, subset = DF_hi.lo == "Singlet")
-p4normalSinglets <- subset(p1tumorFilteredDoublet, subset = DF_hi.lo == "Singlet")
+p1normalSinglets <- subset(p1normalFilteredDoublet, subset = DF_hi.lo == "Singlet")
+p2tumorSinglets <- subset(p2tumorFilteredDoublet, subset = DF_hi.lo == "Singlet")
+p2normalSinglets <- subset(p2normalFilteredDoublet, subset = DF_hi.lo == "Singlet")
+p3tumorSinglets <- subset(p3tumorFilteredDoublet, subset = DF_hi.lo == "Singlet")
+p3normalSinglets <- subset(p3normalFilteredDoublet, subset = DF_hi.lo == "Singlet")
+p4tumorSinglets <- subset(p4tumorFilteredDoublet, subset = DF_hi.lo == "Singlet")
+p4normalSinglets <- subset(p4normalFilteredDoublet, subset = DF_hi.lo == "Singlet")
 ```
+
