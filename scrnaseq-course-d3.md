@@ -346,6 +346,7 @@ allsamplesPCA <- RunPCA(object = allsamplesScaleData, features = VariableFeature
 ElbowPlot(allsamplesPCA, ndims = 50)
 ```
 
+<img src="/assets/img/ElbowPlot_cancerData.png" alt="gui1" width="1200"/>
 
 In this tutorial, I have chosen PC 20. Beyond this number, the variance seems to be stabilised and should be good enough to perform clustering.
 
