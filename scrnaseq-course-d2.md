@@ -268,7 +268,7 @@ dat2ScaledObj <- ScaleData(object = dat2Normalised2Obj, features = all.genes)
 - By default, only the previously determined variable features are used as input, but can be defined using `features` argument if you wish to choose a different subset.
 
 ```
-dat2Scaled2Obj <- RunPCA(object = dat2ScaledObj, features = VariableFeatures(object = dat2ScaledObj), do.print = TRUE, pcs.print = 1:5, genes.print = 5)
+dat2Scaled2Obj <- RunPCA(object = dat2ScaledObj, features = VariableFeatures(object = dat2ScaledObj), do.print = TRUE, ndims.print = 1:5, nfeatures.print = 5)
 ```
 
 - This command uses only the highly variable genes (`VariableFeatures(object = dat2ScaledObj)`) instead of all genes to reduce noise and improve clustering.
