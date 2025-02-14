@@ -232,3 +232,30 @@ p4tumorSinglets <- subset(p4tumorFilteredDoublet, subset = DF_hi.lo == "Singlet"
 p4normalSinglets <- subset(p4normalFilteredDoublet, subset = DF_hi.lo == "Singlet")
 ```
 
+---
+### Normalization and finding variable features
+---
+
+- In the next step, simply create a list called `sample_list` which stores all the samples.
+
+```
+sample_list <- list()
+sample_list[["p1tumorSinglets"]] <- p1tumor
+sample_list[["p1normalSinglets"]] <- p1normal
+sample_list[["p2tumorSinglets"]] <- p2tumor
+sample_list[["p2normalSinglets"]] <- p2normal
+sample_list[["p3tumorSinglets"]] <- p3tumor
+sample_list[["p3normalSinglets"]] <- p3normal
+sample_list[["p4tumorSinglets"]] <- p4tumor
+sample_list[["p4normalSinglets"]] <- p4normal
+```
+
+- Once the samples are added to the list, run `NormalizeData` and `FindVariableFeatures` functions to perform normalization and finding variable features using VST and `nfeatures=2000`.
+- Interate this step over all the samples in the `sample_list`. 
+
+```
+for (i in 1:length(sample_list)) {
+  sample_list[[i]] <- NormalizeData(sample_list[[i]], normalization.method = "LogNormalize", scale.factor = 10000)
+  sample_list[[i]] <- FindVariableFeatures(sample_list[[i]], selection.method = "vst", nfeatures = 2000, verbose = T)
+}
+```
