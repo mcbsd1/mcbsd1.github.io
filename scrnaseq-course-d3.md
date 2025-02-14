@@ -173,3 +173,45 @@ Now, filter cells. The first one has been done for you.
 p1tumorFilteredObj <- subset(p1tumor, subset = nFeature_RNA > 200 & nFeature_RNA < 4000 &  percent.mt < 10)
 ```
 
+---
+### Doublet removal
+---
+
+---
+### Doublet identification
+---
+
+- The next step is to identify doublets in the datasets. For this we will be using `DoubletFinder` tool in R.
+- Follow the steps as mentioned to identify and label the cells as `Singlet` or `Doublet`.
+
+The first sample has been done for you:
+
+```
+sweep.res.list <- paramSweep(p1tumorFilteredObj, PCs = 1:20, sct = TRUE)
+sweep.stats <- summarizeSweep(sweep.res.list, GT = FALSE)
+bcmvn <- find.pK(sweep.stats)
+pk <- as.numeric(as.vector(bcmvn$pK)[which.max(bcmvn$BCmetric)])
+
+annotations <- p1tumorFilteredObj@active.ident
+homotypic.prop <- modelHomotypic(annotations)
+nExp_poi <- round(0.076*length(p1tumorFilteredObj@active.ident))
+nExp_poi.adj <- round(nExp_poi*(1-homotypic.prop))
+
+seuratDoublet <- doubletFinder(p1tumorFilteredObj, PCs = 1:20, pN = 0.25, pK = pk, nExp = nExp_poi, reuse.pANN = FALSE, sct = TRUE)
+pANN_String <- paste("pANN_0.25_",pk,"_",list(nExp_poi),sep="")
+
+p1tumorFilteredDoublet <- doubletFinder(seuratDoublet, PCs = 1:10, pN = 0.25, pK = pk, nExp = nExp_poi.adj, reuse.pANN = pANN_String)
+```
+
+```
+# Use this format: DF.classifications_pN_pk_nExp_poi
+
+classificationsCol <- p1tumorFilteredDoublet@meta.data["DF.classifications_0.25_0.24_134"]
+
+p1tumorFilteredDoublet@meta.data[,"DF_hi.lo"] <- classificationsCol[1]
+
+```
+
+Follow the steps to generate doublet marked objects for rest of the samples.
+
+
