@@ -259,3 +259,59 @@ for (i in 1:length(sample_list)) {
   sample_list[[i]] <- FindVariableFeatures(sample_list[[i]], selection.method = "vst", nfeatures = 2000, verbose = T)
 }
 ```
+
+---
+### Perform Integration of samples
+---
+
+- We will not integrate data with 8 samples (2 conditions for each Patient).
+- First step is to find integration anchors.
+
+#### Step 1: Finding Integration Anchors
+
+```
+sample_anchors <- FindIntegrationAnchors(object.list = sample_list, dims = 1:30)
+```
+
+- This step identifies anchors (shared biological structures) across multiple datasets in sample_list to help correct batch effects.
+- It first selects highly variable genes (default = 2000 features).
+- It then runs canonical correlation analysis (CCA) to find common biological signals across datasets.
+- The parameter dims = 1:30 means that the first 30 principal components (PCs) are used to define the anchors.
+
+#### Step 2: Integrating the Data
+
+```
+allsamples_seurat <- IntegrateData(anchorset = sample_anchors, dims = 1:30)
+```
+
+- This step applies batch correction using the integration anchors found in Step 1.
+- It merges all datasets into a single Seurat object (allsamples_seurat), where only the 2000 most variable features are stored in the "integrated" assay.
+- The batch-corrected data is now stored in the "integrated" assay.
+
+#### Step 3: Switching Back to RNA Assay
+
+```
+DefaultAssay(allsamples_seurat) <- "RNA"
+```
+
+- Changes the active assay from "integrated" to "RNA".
+- This is necessary for normalization, scaling, and differential expression analysis because "integrated" data should not be used for these steps.
+
+Why It’s Needed:
+
+- The "integrated" assay is only useful for dimensionality reduction (PCA, UMAP), clustering, and visualization.
+- Gene expression comparisons (e.g., `FindMarkers()`) should be done on the "RNA" assay to retain true biological signal.
+
+#### Step 4: Merging Layers
+
+```
+allsamples_seurat1 <- JoinLayers(allsamples_seurat)
+```
+
+- This step merges different data layers within the Seurat object to ensure all layers are accessible.
+- Specifically, it merges:
+  - Raw expression data (RNA)
+  - Integrated (batch-corrected) data
+  - Any other assays or metadata layers
+- This is useful for downstream analysis where you might need access to both raw and batch-corrected data.
+- 
