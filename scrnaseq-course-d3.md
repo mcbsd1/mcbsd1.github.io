@@ -314,4 +314,44 @@ allsamples_seurat1 <- JoinLayers(allsamples_seurat)
   - Integrated (batch-corrected) data
   - Any other assays or metadata layers
 - This is useful for downstream analysis where you might need access to both raw and batch-corrected data.
-- 
+
+---
+### Perform Data Scaling
+---
+
+- We will be using `all.genes` to capture all genes for data scaling.
+
+```
+all.genes <- rownames(allsamples_seurat1)
+allsamplesScaleData <- ScaleData(allsamples_seurat1, features = all.genes)
+```
+
+---
+### Perform linear dimensional reduction
+---
+
+- Next we perform PCA on the scaled data. 
+- We use variable features by default, in which case only the previously determined variable features are used as input.
+
+```
+allsamplesPCA <- RunPCA(object = allsamplesScaleData, features = VariableFeatures(object = allsamplesScaleData), do.print = TRUE, ndims.print = 1:5, nfeatures.print = 5)
+```
+
+#### Plot ElbowPlot to calculate number of PCs
+
+- Next, we plot Elbow plot by running `ElbowPlot` function to determine number of PCs which define highest variance in the datasets.
+- We create this plot with `ndims = 50`
+
+```
+ElbowPlot(allsamplesPCA, ndims = 50)
+```
+
+
+In this tutorial, I have chosen PC 20. Beyond this number, the variance seems to be stabilised and should be good enough to perform clustering.
+
+---
+### Clustering
+---
+
+- Next, we perform clustering by running `FindNeighbors()` and `FindClusters()` functions using the dimensionality determined by plotting ElbowPlot().
+- We take first 20 PCs as an input in this case.
