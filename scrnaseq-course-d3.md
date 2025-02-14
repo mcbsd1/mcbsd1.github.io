@@ -85,49 +85,49 @@ Load datasets:
 ```
 # Loading P1 Tumor processed data
 
-data <- read.table("~/Desktop/Nextflow/scRNAseq_Workshop/Cancer_datasets/GSM3304007_P1_Tumor_processed_data.txt",row.names = 1,header = T)
+data <- read.table("GSM3304007_P1_Tumor_processed_data.txt",row.names = 1,header = T)
 data1 <- data[-1]
 p1tumor <- CreateSeuratObject(counts = data1, project = "GSM3304007")
 
 # Loading P1 Normal processed data
 
-data <- read.table("~/Desktop/Nextflow/scRNAseq_Workshop/Cancer_datasets/GSM3304008_P1_Normal_processed_data.txt",row.names = 1,header = T)
+data <- read.table("GSM3304008_P1_Normal_processed_data.txt",row.names = 1,header = T)
 data1 <- data[-1]
 p1normal <- CreateSeuratObject(counts = data1, project = "GSM3304008")
 
 # Loading P2 Tumor processed data
 
-data <- read.table("~/Desktop/Nextflow/scRNAseq_Workshop/Cancer_datasets/GSM3304009_P2_Tumor_processed_data.txt",row.names = 1,header = T)
+data <- read.table("GSM3304009_P2_Tumor_processed_data.txt",row.names = 1,header = T)
 data1 <- data[-1]
 p2tumor <- CreateSeuratObject(counts = data1, project = "GSM3304009")
 
 # Loading P2 Normal processed data
 
-data <- read.table("~/Desktop/Nextflow/scRNAseq_Workshop/Cancer_datasets/GSM3304010_P2_Normal_processed_data.txt",row.names = 1,header = T)
+data <- read.table("GSM3304010_P2_Normal_processed_data.txt",row.names = 1,header = T)
 data1 <- data[-1]
 p2normal <- CreateSeuratObject(counts = data1, project = "GSM3304010")
 
 # Loading P3 Tumor processed data
 
-data <- read.table("~/Desktop/Nextflow/scRNAseq_Workshop/Cancer_datasets/GSM3304011_P3_Tumor_processed_data.txt",row.names = 1,header = T)
+data <- read.table("GSM3304011_P3_Tumor_processed_data.txt",row.names = 1,header = T)
 data1 <- data[-1]
 p3tumor <- CreateSeuratObject(counts = data1, project = "GSM3304011")
 
 # Loading P3 Normal processed data
 
-data <- read.table("~/Desktop/Nextflow/scRNAseq_Workshop/Cancer_datasets/GSM3304012_P3_Normal_processed_data.txt",row.names = 1,header = T)
+data <- read.table("GSM3304012_P3_Normal_processed_data.txt",row.names = 1,header = T)
 data1 <- data[-1]
 p3normal <- CreateSeuratObject(counts = data1, project = "GSM3304012")
 
 # Loading P4 Tumor processed data
 
-data <- read.table("~/Desktop/Nextflow/scRNAseq_Workshop/Cancer_datasets/GSM3304013_P4_Tumor_processed_data.txt",row.names = 1,header = T)
+data <- read.table("GSM3304013_P4_Tumor_processed_data.txt",row.names = 1,header = T)
 data1 <- data[-1]
 p4tumor <- CreateSeuratObject(counts = data1, project = "GSM3304013")
 
 # Loading P4 Normal processed data
 
-data <- read.table("~/Desktop/Nextflow/scRNAseq_Workshop/Cancer_datasets/GSM3304014_P4_Normal_processed_data.txt",row.names = 1,header = T)
+data <- read.table("GSM3304014_P4_Normal_processed_data.txt",row.names = 1,header = T)
 data1 <- data[-1]
 p4normal <- CreateSeuratObject(counts = data1, project = "GSM3304014")
 ```
