@@ -383,3 +383,5 @@ allsamplesUMAP <- RunUMAP(allsamplesFC, reduction = "pca", dims = 1:20, verbose 
 DefaultAssay(allsamplesUMAP) <- "integrated"
 DimPlot(allsamplesUMAP, reduction = "umap")
 ```
+
+<img src="/assets/img/UMAP_cancerData.png" alt="gui1" width="1200"/>
