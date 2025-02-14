@@ -356,3 +356,30 @@ In this tutorial, I have chosen PC 20. Beyond this number, the variance seems to
 
 - Next, we perform clustering by running `FindNeighbors()` and `FindClusters()` functions using the dimensionality determined by plotting ElbowPlot().
 - We take first 20 PCs as an input in this case.
+
+```
+allsamplesFN <- FindNeighbors(allsamplesPCA, reduction = "pca", dims = 1:20)
+allsamplesFC <- FindClusters(object = allsamplesFN)
+```
+
+---
+### Non-linear dimensional reduction
+---
+
+- In the next step, we run the `RunUMAP()` function to group the cells together constructing a UMAP plot.
+- Again, we use first 20 PCs.
+
+```
+allsamplesUMAP <- RunUMAP(allsamplesFC, reduction = "pca", dims = 1:20, verbose = T)
+```
+
+---
+### Generate UMAP plot
+---
+
+- Before we generate the UMAP plot, it is important to change the default assay layer to integrated.
+
+```
+DefaultAssay(allsamplesUMAP) <- "integrated"
+DimPlot(allsamplesUMAP, reduction = "umap")
+```
