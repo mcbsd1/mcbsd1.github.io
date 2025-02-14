@@ -178,7 +178,7 @@ p1tumorFilteredObj <- subset(p1tumor, subset = nFeature_RNA > 200 & nFeature_RNA
 ---
 
 ---
-### Doublet identification
+#### Doublet identification
 ---
 
 - The next step is to identify doublets in the datasets. For this we will be using `DoubletFinder` tool in R.
@@ -214,4 +214,20 @@ p1tumorFilteredDoublet@meta.data[,"DF_hi.lo"] <- classificationsCol[1]
 
 Follow the steps to generate doublet marked objects for rest of the samples.
 
+---
+#### Singlet selection and doublet removal
+---
 
+- In the next step, we use `subset` function in R to select Singlet and filter Doublet cells from the dataset.
+- This is iterated for all the samples.
+
+```
+p1tumorSinglets <- subset(p1tumorFilteredDoublet, subset = DF_hi.lo == "Singlet")
+p1normalSinglets <- subset(p1tumorFilteredDoublet, subset = DF_hi.lo == "Singlet")
+p2tumorSinglets <- subset(p1tumorFilteredDoublet, subset = DF_hi.lo == "Singlet")
+p2normalSinglets <- subset(p1tumorFilteredDoublet, subset = DF_hi.lo == "Singlet")
+p3tumorSinglets <- subset(p1tumorFilteredDoublet, subset = DF_hi.lo == "Singlet")
+p3normalSinglets <- subset(p1tumorFilteredDoublet, subset = DF_hi.lo == "Singlet")
+p4tumorSinglets <- subset(p1tumorFilteredDoublet, subset = DF_hi.lo == "Singlet")
+p4normalSinglets <- subset(p1tumorFilteredDoublet, subset = DF_hi.lo == "Singlet")
+``
