@@ -407,7 +407,15 @@ DimPlot(allsamplesUMAP, reduction = "umap", group.by = "sampleType")
 
 <img src="/assets/img/UMAP_sampleType.png" alt="gui1" width="1200"/>
 
+#### UMAP plot splitted by sample type (Tumor/Normal)
 
+- To plot the UMAP split-by sampleType information stored in `meta.data`, use the following code:
+
+```
+DimPlot(allsamplesUMAP, reduction = "umap", split.by = "sampleType")
+```
+
+<img src="/assets/img/UMAP_splitbySampleType.png" alt="gui1" width="1200"/>
 
 <br>
 
