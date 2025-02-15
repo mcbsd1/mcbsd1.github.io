@@ -417,6 +417,10 @@ DimPlot(allsamplesUMAP, reduction = "umap", split.by = "sampleType")
 
 <img src="/assets/img/UMAP_splitbySampleType.png" alt="gui1" width="1200"/>
 
+- Now, turn on the labels for each cluster.
+- **How do you turn-on the labels ?**
+
+
 <br>
 
 ---
