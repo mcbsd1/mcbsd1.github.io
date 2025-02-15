@@ -385,3 +385,21 @@ DimPlot(allsamplesUMAP, reduction = "umap")
 ```
 
 <img src="/assets/img/UMAP_cancerData.png" alt="gui1" width="1200"/>
+
+#### UMAP plot by sample name
+
+- To plot the UMAP by sampleName information stored in `meta.data`, use the following code:
+
+```
+DimPlot(allsamplesUMAP, reduction = "umap", group.by = "sampleName")
+```
+
+<img src="/assets/img/UMAP_sampleName.png" alt="gui1" width="1200"/>
+
+<br>
+
+---
+## Differential Gene Expression (DGE)
+---
+
+
