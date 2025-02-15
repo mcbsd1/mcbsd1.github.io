@@ -419,6 +419,7 @@ DimPlot(allsamplesUMAP, reduction = "umap", split.by = "sampleType")
 
 - Now, turn on the labels for each cluster.
 - **How do you turn-on the labels ?**
+- **Which clusters are expressed in Tumor and Normal cells ?**
 
 
 <br>
