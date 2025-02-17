@@ -488,4 +488,4 @@ FeaturePlot(allsamplesUMAP, features = c("JUN", "MALAT1"), split.by = "sampleTyp
 - CellMarker is a manually curated database human and mouse species.
 - Its manually curated over 100,000 published papers, 4124 entries including the cell marker information.
 - **13,605** cell markers of **467** cell types in **158** human tissues/sub-tissues and **9148** cell makers of **389** cell types in **81** mouse tissues/sub-tissues were collected and deposited in CellMarker.
-- **Paper Reference**: [CellMarkerr: a manually curated resource of cell markers in human and mouse.](https://academic.oup.com/nar/advance-article/doi/10.1093/nar/gky900/5115823)
+- **Paper Reference**: [CellMarker: a manually curated resource of cell markers in human and mouse.](https://academic.oup.com/nar/advance-article/doi/10.1093/nar/gky900/5115823)
