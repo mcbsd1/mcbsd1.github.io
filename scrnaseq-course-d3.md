@@ -469,3 +469,12 @@ FeaturePlot(allsamplesUMAP, features = c("TYROBP", "KLRF1", "SPON2", "FCGR3A", "
 ```
 
 <img src="/assets/img/FeaturePlot_cancerData.png" alt="gui1" width="1200"/>
+
+
+- To plot the Feature plot by sampleType i.e Tumor/Normal for *JUN1* and *MALAT1* genes which are upregulated in the intratumoral epithelial cell, run the following command:
+
+```
+FeaturePlot(allsamplesUMAP, features = c("JUN", "MALAT1"), split.by = "sampleType")
+```
+
+<img src="/assets/img/FeaturePlot_JUN1_MALAT1.png" alt="gui1" width="1200"/>
