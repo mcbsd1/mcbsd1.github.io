@@ -457,7 +457,7 @@ allsamples.markers <- FindAllMarkers(allsamplesUMAP)
 To plot the expression of genes expressed in cluster 5, run the following command:
 
 ```
-VlnPlot(allsamplesUMAP, features = c("TYROBP", "KLRF1", "SPON2"))
+VlnPlot(allsamplesUMAP, features = c("TYROBP", "KLRF1", "SPON2", "FCGR3A"), ncol = 2)
 ```
 
 <img src="/assets/img/ViolinPlot_clus5_markers.png" alt="gui1" width="1200"/>
