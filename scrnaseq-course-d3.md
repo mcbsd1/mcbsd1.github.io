@@ -493,7 +493,7 @@ FeaturePlot(allsamplesUMAP, features = c("JUN", "MALAT1"), split.by = "sampleTyp
 ---
 ---
 - For this dataset, we will be downloading the "Human cell markers" from CellMarker database.
-- **Human Cell markers:** [download](http://xteam.xbio.top/CellMarker/download/Human_cell_markers.txt)
+- **Human Cell markers:** [download](http://xteam.xbio.top/CellMarker/download/Human_cell_markers.txt) or visit the download page: [download page](http://xteam.xbio.top/CellMarker/download.jsp)
 - Other cell markers are as follows:
   - Mouse cell markers: [download](http://xteam.xbio.top/CellMarker/download/Mouse_cell_markers.txt)
   - Single cell markers: [download](http://xteam.xbio.top/CellMarker/download/Single_cell_markers.txt)
