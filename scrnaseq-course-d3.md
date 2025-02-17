@@ -489,3 +489,12 @@ FeaturePlot(allsamplesUMAP, features = c("JUN", "MALAT1"), split.by = "sampleTyp
 - Its manually curated over 100,000 published papers, 4124 entries including the cell marker information.
 - **13,605** cell markers of **467** cell types in **158** human tissues/sub-tissues and **9148** cell makers of **389** cell types in **81** mouse tissues/sub-tissues were collected and deposited in CellMarker.
 - **Paper Reference**: [CellMarker: a manually curated resource of cell markers in human and mouse.](https://academic.oup.com/nar/advance-article/doi/10.1093/nar/gky900/5115823)
+
+---
+---
+- For this dataset, we will be downloading the "Human cell markers" from CellMarker database.
+- Human Cell markers: [download](http://xteam.xbio.top/CellMarker/download/Human_cell_markers.txt)
+- Other cell markers are as follows:
+  - Mouse cell markers: [download](http://xteam.xbio.top/CellMarker/download/Mouse_cell_markers.txt)
+  - Single cell markers: [download](http://xteam.xbio.top/CellMarker/download/Single_cell_markers.txt)
+  - All cell markers: [download](http://xteam.xbio.top/CellMarker/download/all_cell_markers.txt)
