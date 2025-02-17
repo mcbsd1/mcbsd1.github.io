@@ -478,3 +478,12 @@ FeaturePlot(allsamplesUMAP, features = c("JUN", "MALAT1"), split.by = "sampleTyp
 ```
 
 <img src="/assets/img/FeaturePlot_JUN1_MALAT1.png" alt="gui1" width="1200"/>
+
+<br>
+
+---
+## Cell Type Identification using CellMarker
+---
+
+- CellMarker is a manually curated database human and mouse species.
+- **Paper Reference**: [CellMarkerr: a manually curated resource of cell markers in human and mouse.](https://academic.oup.com/nar/advance-article/doi/10.1093/nar/gky900/5115823)
