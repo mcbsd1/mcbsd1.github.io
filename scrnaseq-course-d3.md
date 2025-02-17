@@ -461,3 +461,11 @@ VlnPlot(allsamplesUMAP, features = c("TYROBP", "KLRF1", "SPON2", "FCGR3A"), ncol
 ```
 
 <img src="/assets/img/ViolinPlot_clus5_markers.png" alt="gui1" width="1200"/>
+
+Now, to plot the expression of cluster 2 and 5 genes as feature plots, run the following command:
+
+```
+FeaturePlot(allsamplesUMAP, features = c("TYROBP", "KLRF1", "SPON2", "FCGR3A", "FGFBP2", "FCN1", "LST1", "AIF1", "C5AR1"))
+```
+
+<img src="/assets/img/FeaturePlot_cancerData.png" alt="gui1" width="1200"/>
