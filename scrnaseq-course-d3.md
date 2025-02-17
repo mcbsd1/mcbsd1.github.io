@@ -436,8 +436,28 @@ DimPlot(allsamplesUMAP, reduction = "umap", split.by = "sampleType")
 cluster2.markers <- FindMarkers(allsamplesUMAP, ident.1 = 2)
 ```
 
+Now, if you want to find all markers distinguishing cluster 5 from clusters 0 and 3, run the following command:
+
+```
+cluster5.markers <- FindMarkers(allsamplesUMAP, ident.1 = 5, ident.2 = c(0, 3))
+```
+
 List the top 5 markers which are expressed significantly in cluster 2.
 
 ```
 head(cluster2.markers, n = 5)
 ```
+
+If you want to find markers for every cluster compared to all remaining cells, then run the following command:
+
+```
+allsamples.markers <- FindAllMarkers(allsamplesUMAP)
+```
+
+To plot the expression of genes expressed in cluster 5, run the following command:
+
+```
+VlnPlot(allsamplesUMAP, features = c("TYROBP", "KLRF1", "SPON2"))
+```
+
+<img src="/assets/img/ViolinPlot_clus5_markers.png" alt="gui1" width="1200"/>
