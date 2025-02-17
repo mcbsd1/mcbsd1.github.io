@@ -428,4 +428,16 @@ DimPlot(allsamplesUMAP, reduction = "umap", split.by = "sampleType")
 ## Differential Gene Expression (DGE)
 ---
 
+- In Seurat, Differential Expression (DE) analysis is used to identify genes that are differentially expressed between different cell groups (clusters, conditions, or sample types).
+- Seurat provides several methods for performing DGE, primarily through the `FindMarkers()` and `FindAllMarkers()` functions.
+- For Example: If you would like to find all the markers for clusters 2, then you would run the following command:
 
+```
+cluster2.markers <- FindMarkers(allsamplesUMAP, ident.1 = 2)
+```
+
+List the top 5 markers which are expressed significantly in cluster 2.
+
+```
+head(cluster2.markers, n = 5)
+```
