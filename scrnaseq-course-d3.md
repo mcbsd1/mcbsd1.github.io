@@ -493,8 +493,8 @@ FeaturePlot(allsamplesUMAP, features = c("JUN", "MALAT1"), split.by = "sampleTyp
 ---
 ---
 - For this dataset, we will be downloading the "Human cell markers" from CellMarker database.
-- **Human Cell markers:** [download](http://xteam.xbio.top/CellMarker/download/Human_cell_markers.txt) or visit the download page: [download page](http://xteam.xbio.top/CellMarker/download.jsp)
+- **Human Cell markers:** [download](http://117.50.127.228/CellMarker/CellMarker_download_files/file/Cell_marker_Human.xlsx) or visit the download page: [download page](http://117.50.127.228/CellMarker/CellMarker_download.html)
 - Other cell markers are as follows:
-  - Mouse cell markers: [download](http://xteam.xbio.top/CellMarker/download/Mouse_cell_markers.txt)
-  - Single cell markers: [download](http://xteam.xbio.top/CellMarker/download/Single_cell_markers.txt)
-  - All cell markers: [download](http://xteam.xbio.top/CellMarker/download/all_cell_markers.txt)
+  - Mouse cell markers: [download]([http://xteam.xbio.top/CellMarker/download/Mouse_cell_markers.txt](http://117.50.127.228/CellMarker/CellMarker_download_files/file/Cell_marker_Mouse.xlsx))
+  - Single cell markers: [download]([http://xteam.xbio.top/CellMarker/download/Single_cell_markers.txt](http://117.50.127.228/CellMarker/CellMarker_download_files/file/Cell_marker_Seq.xlsx))
+  - All cell markers: [download]([http://xteam.xbio.top/CellMarker/download/all_cell_markers.txt](http://117.50.127.228/CellMarker/CellMarker_download_files/file/Cell_marker_All.xlsx))
