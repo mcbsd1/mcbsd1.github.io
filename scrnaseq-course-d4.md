@@ -101,3 +101,10 @@ Type in `pred.allsamples` to see the output of the analysis:
 print(pred.allsamples)
 ```
 
+Now we will need to convert the row names to cell_ID column and will create a new dataframe with a name `pred.allsamples.df` and remove the row names from the dataframe.
+
+```
+pred.allsamples.df <- data.frame(cell_ID = row.names(pred.allsamples), pred.allsamples)
+rownames(pred.allsamples.df) <- NULL
+```
+
