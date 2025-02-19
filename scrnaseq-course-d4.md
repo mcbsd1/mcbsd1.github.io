@@ -184,3 +184,9 @@ DimPlot(allsamplesUMAP1, reduction = "umap", group.by = "predicted_cell_type", s
 
 - Its an R package primarily used for constructing single-cell trajectories. 
 - In development, disease, and throughout life, cells transition from one state to another. Monocle 3 helps you discover these transitions.
+- For this analysis, we will be using counts data from *C.elegens* species.
+
+
+```
+
+```
