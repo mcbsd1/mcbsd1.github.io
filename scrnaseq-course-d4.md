@@ -233,3 +233,11 @@ cds2 <- align_cds(cds1, alignment_group = "batch", residual_model_formula_str = 
 - The formula tells Monocle3 to remove unwanted variation due to specific technical or biological factors.
 - The **bg.*.loading** terms likely represent confounding variables (e.g., sequencing depth, technical artifacts, or sample conditions).
 - By including them in the residual model, Monocle3 accounts for their effects so they don't dominate the biological signal.
+
+Once the data is aligned and unwanted variation is removed, then perform dimensionality reduction step using `reduce_dimension()` function.
+
+```
+cds3 <- reduce_dimension(cds2)
+```
+
+- Monocle 3 uses UMAP by default, as it is both faster and better suited for clustering and trajectory analysis.
