@@ -178,11 +178,11 @@ DimPlot(allsamplesUMAP1, reduction = "umap", group.by = "predicted_cell_type", s
 
 ---
 ---
-### Trajectory analysis using monocle3
+### Trajectory analysis
 ---
 ---
 
-- Its an R package primarily used for constructing single-cell trajectories. 
+- We will be using Monocle3 R package to perform trajectory analysis.
 - In development, disease, and throughout life, cells transition from one state to another. Monocle 3 helps you discover these transitions.
 - For this analysis, we will be using counts data from *C.elegens* species.
 
