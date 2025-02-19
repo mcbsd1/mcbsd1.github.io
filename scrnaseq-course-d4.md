@@ -185,8 +185,15 @@ DimPlot(allsamplesUMAP1, reduction = "umap", group.by = "predicted_cell_type", s
 - Its an R package primarily used for constructing single-cell trajectories. 
 - In development, disease, and throughout life, cells transition from one state to another. Monocle 3 helps you discover these transitions.
 - For this analysis, we will be using counts data from *C.elegens* species.
-- We will download the `expression_matrix`, `cell_metadata` and `gene_annotation` data.
 
+
+Load the monocle library
+
+```
+library(monocle3)
+```
+
+We will download the `expression_matrix`, `cell_metadata` and `gene_annotation` data.
 
 ```
 expression_matrix <- readRDS(url("https://depts.washington.edu:/trapnell-lab/software/monocle3/celegans/data/packer_embryo_expression.rds"))
@@ -252,3 +259,4 @@ plot_cells(cds3,
 ```
 
 <img src="/assets/img/plot_cells_cellType.png" alt="gui1" width="1200"/>
+
