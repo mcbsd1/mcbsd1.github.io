@@ -31,7 +31,7 @@ author: "Sumukh Deshpande"
 - Today we will cover:
   - Integrating single-cell datasets.
   - Differential Gene Expression analysis and marker selection.
-  - Cell-type annotation using SingleR.
+  - Cell-type annotation using CellMarker.
 
 
 ---
