@@ -40,7 +40,7 @@ author: "Sumukh Deshpande"
 ---
 
 - The easiest way to use SingleR is to annotate cells against built-in references.
-- The `celldex` package provides access to several reference datasets.
+- The `celldex` R package provides access to several reference datasets.
 
 **General-purpose references**
 - Human primary cell atlas (HPCA): Publicly available microarray datasets derived from human primary cells.
@@ -52,3 +52,28 @@ author: "Sumukh Deshpande"
 - Database of Immune Cell Expression/eQTLs/Epigenomics (DICE): The `DICE` reference consists of bulk RNA-seq samples of sorted cell populations.
 - Novershtern hematopoietic data: The Novershtern reference (previously known as Differentiation Map) consists of microarray datasets for sorted hematopoietic cell populations from GSE24759.
 - Monaco immune data: The Monaco reference consists of bulk RNA-seq samples of sorted immune cell populations from GSE107011.
+
+---
+#### Downloading reference dataset
+---
+
+- Since the dataset we are working with is the NSCLC scRNAseq dataset, we will be working with HPCA dataset.
+- To download the reference data, use the `fetchReference()` function.
+
+```
+# Load the celldex package
+
+library(celldex)
+
+# Download the reference database
+
+ref <- fetchReference("hpca", "2024-02-26")
+```
+
+SingleR requires the seurat object to be converted to `SingleCellExperiment` object. Therefore, we will be doing the conversion step at this point.
+
+```
+# Convert Seurat object to SingleCellExperiment object
+
+allsamplesUMAP.SCE <- as.SingleCellExperiment(allsamplesUMAP)
+```
