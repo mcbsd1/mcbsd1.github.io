@@ -150,4 +150,10 @@ for( i in 1:length(prediction_ids)) {
 }
 ```
 
+Plot the UMAP using the `predicted_cell_type` column stored in the meta.data:
 
+```
+DimPlot(allsamplesUMAP1, reduction = "umap", group.by = "predicted_cell_type", label = TRUE, pt.size = 0.8)
+```
+
+<img src="/assets/img/UMAP_SingleR_predicted_cell_type.png" alt="gui1" width="1200"/>
