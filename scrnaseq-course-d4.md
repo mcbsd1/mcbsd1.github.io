@@ -165,3 +165,12 @@ DimPlot(allsamplesUMAP1, reduction = "umap", group.by = "predicted_cell_type", s
 ```
 
 <img src="/assets/img/UMAP_predicted_cell_type_splitBy_sampleType.png" alt="gui1" width="1200"/>
+
+
+Further to the analysis, if we need to UMAP by sampleName (P1_Tumor, P1_Normal, P2_Tumor, P2_Normal, etc.), use the `split.by` parameter:
+
+```
+DimPlot(allsamplesUMAP1, reduction = "umap", group.by = "predicted_cell_type", split.by = "sampleName", label = TRUE, pt.size = 0.8, ncol = 4)
+```
+
+<img src="/assets/img/predicted_cell_type_UMAP_splitBy_sampleName.png" alt="gui1" width="1200"/>
