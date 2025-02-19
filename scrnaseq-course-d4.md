@@ -241,3 +241,14 @@ cds3 <- reduce_dimension(cds2)
 ```
 
 - Monocle 3 uses UMAP by default, as it is both faster and better suited for clustering and trajectory analysis.
+- To plot the data, use Monocle's main plotting function, plot_cells():
+
+```
+plot_cells(cds3,
+           color_cells_by = "cell.type",
+           label_groups_by_cluster=FALSE,
+           label_leaves=FALSE,
+           label_branch_points=FALSE)
+```
+
+<img src="/assets/img/plot_cells_cellType.png" alt="gui1" width="1200"/>
