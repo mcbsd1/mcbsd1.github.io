@@ -208,8 +208,15 @@ cds <- new_cell_data_set(expression_matrix,
 
 - Once the data is loaded, we need to pre-process the data in which the data will get normalized.
 - We will just use the standard PCA method with `ndims = 50`.
-- This will create an elbow plot similar to the one generated using Seurat.
 
 ```
 cds1 <- preprocess_cds(cds, num_dim = 50)
 ```
+
+This will create an elbow plot similar to the one generated using Seurat.
+
+```
+plot_pc_variance_explained(cds1)
+```
+
+<img src="/assets/img/Elbowplot_monocle.png" alt="gui1" width="1200"/>
