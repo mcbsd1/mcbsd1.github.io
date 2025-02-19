@@ -126,4 +126,28 @@ Now, add `cell_ID` column to the `allsamplesUMAP1` seurat object which is copied
 allsamplesUMAP1@meta.data <- data.frame(cell_ID = row.names(allsamplesUMAP1@meta.data), allsamplesUMAP1@meta.data)
 ```
 
-Also, create another column called `predicted_cell_type_SingleR` column in the metadata of `allsamplesUMAP1` object. Dont worry. The values in this column will get replaced with the predicted cell types using SingleR.
+Also, create another column called `predicted_cell_type` column in the metadata of `allsamplesUMAP1` object. Dont worry. The values in this column will get replaced with the predicted cell type values using output from SingleR analysis stored in the dataframe `pred.allsamples.df_labels`.
+
+```
+allsamplesUMAP1$predicted_cell_type <- allsamplesUMAP1$cell_ID
+```
+
+Create a vector cell_IDs and predicted celltypes.
+
+```
+prediction_ids <- pred.allsamples.df_labels$cell_ID
+prediction_celltypes <- pred.allsamples.df_labels$labels
+```
+
+Now, run a for loop over the cell_IDs stored in `pred.allsamples.df_labels` dataframe and replace the IDs with the predicted celltypes. With every iteration of the cell_ID value, the cell_ID value gets replaced with the predicted celltype value.
+
+```
+for( i in 1:length(prediction_ids)) {
+
+    print(prediction_ids[i])
+    allsamplesUMAP1@meta.data["predicted_cell_type"][allsamplesUMAP1@meta.data["predicted_cell_type"] == prediction_ids[i]] <- prediction_celltypes[i]
+
+}
+```
+
+
