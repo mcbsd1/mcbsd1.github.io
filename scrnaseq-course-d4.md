@@ -260,3 +260,12 @@ plot_cells(cds3,
 
 <img src="/assets/img/plot_cells_cellType.png" alt="gui1" width="1200"/>
 
+
+---
+#### Group cells into clusters
+---
+
+- Grouping cells into clusters is an important step in identifying the cell types represented in your data.
+- Monocle uses a technique called community detection (Leiden algorithm) to group cells.
+- Leiden Algorithm identifies clusters (or communities) of cells in a graph-based representation of scRNA-seq data.
+- The method is an improvement over the Louvain algorithm and ensures better partitioning of cells into distinct groups.
