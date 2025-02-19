@@ -77,3 +77,27 @@ SingleR requires the seurat object to be converted to `SingleCellExperiment` obj
 
 allsamplesUMAP.SCE <- as.SingleCellExperiment(allsamplesUMAP)
 ```
+
+Run the SingleR function to perform mapping of target dataset onto the reference dataset.
+
+```
+pred.allsamples <- SingleR(test = allsamplesUMAP.SCE, ref = ref, assay.type.test=1,
+                           labels = ref$label.main)
+```
+
+**What does `SingleR` function do ?**
+
+- It assigns cell types to individual cells by comparing their gene expression profiles to reference datasets with known cell type annotations.
+- How `SingleR` Works:
+  1. **Input Data**: Takes a query dataset containing gene expression data for single cells.
+  2. **Reference Dataset**: Uses a reference dataset with pre-annotated cell types from celldex, such as HumanPrimaryCellAtlasData.
+  3. **Correlation Analysis**: Compares the gene expression of each cell in the query dataset to the reference profiles using Spearman correlation or other similarity measures.
+  4. **Scoring & Classification**: Assigns the most likely cell type based on the highest similarity score.
+  5. **Fine-tuning**: Iteratively refines the annotations by removing ambiguous labels and reassigning cells.
+
+Type in `pred.allsamples` to see the output of the analysis:
+
+```
+print(pred.allsamples)
+```
+
