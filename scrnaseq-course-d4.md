@@ -220,3 +220,16 @@ plot_pc_variance_explained(cds1)
 ```
 
 <img src="/assets/img/Elbowplot_monocle.png" alt="gui1" width="1200"/>
+
+
+- The next step is to check for and remove batch effects in the data which are systematic differences in the transcriptome of cells measured in different experimental batches.
+- These could be technical in nature, such as those introduced during the single-cell RNA-seq protocol, or biological.  
+
+```
+cds2 <- align_cds(cds1, alignment_group = "batch", residual_model_formula_str = "~ bg.300.loading + bg.400.loading + bg.500.1.loading + bg.500.2.loading + bg.r17.loading + bg.b01.loading + bg.b02.loading")
+```
+
+- The function `align_cds()` in Monocle3 is performing batch correction for cell_data_set (CDS) object.
+- The formula tells Monocle3 to remove unwanted variation due to specific technical or biological factors.
+- The **bg.*.loading** terms likely represent confounding variables (e.g., sequencing depth, technical artifacts, or sample conditions).
+- By including them in the residual model, Monocle3 accounts for their effects so they don't dominate the biological signal.
