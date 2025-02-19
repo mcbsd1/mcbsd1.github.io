@@ -185,8 +185,31 @@ DimPlot(allsamplesUMAP1, reduction = "umap", group.by = "predicted_cell_type", s
 - Its an R package primarily used for constructing single-cell trajectories. 
 - In development, disease, and throughout life, cells transition from one state to another. Monocle 3 helps you discover these transitions.
 - For this analysis, we will be using counts data from *C.elegens* species.
+- We will download the `expression_matrix`, `cell_metadata` and `gene_annotation` data.
 
 
 ```
+expression_matrix <- readRDS(url("https://depts.washington.edu:/trapnell-lab/software/monocle3/celegans/data/packer_embryo_expression.rds"))
+cell_metadata <- readRDS(url("https://depts.washington.edu:/trapnell-lab/software/monocle3/celegans/data/packer_embryo_colData.rds"))
+gene_annotation <- readRDS(url("https://depts.washington.edu:/trapnell-lab/software/monocle3/celegans/data/packer_embryo_rowData.rds"))```
+```
 
+Now, create a new cell_data_set object using the `new_cell_data_set()` function.
+
+```
+cds <- new_cell_data_set(expression_matrix,
+                         cell_metadata = cell_metadata,
+                         gene_metadata = gene_annotation)
+```
+
+---
+#### Pre-process the data
+---
+
+- Once the data is loaded, we need to pre-process the data in which the data will get normalized.
+- We will just use the standard PCA method with `ndims = 50`.
+- This will create an elbow plot similar to the one generated using Seurat.
+
+```
+cds1 <- preprocess_cds(cds, num_dim = 50)
 ```
