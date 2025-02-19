@@ -157,3 +157,11 @@ DimPlot(allsamplesUMAP1, reduction = "umap", group.by = "predicted_cell_type", l
 ```
 
 <img src="/assets/img/UMAP_SingleR_predicted_cell_type.png" alt="gui1" width="1200"/>
+
+Plot the UMAP split-by `sampleType` column (Tumor/Normal):
+
+```
+DimPlot(allsamplesUMAP1, reduction = "umap", group.by = "predicted_cell_type", split.by = "sampleType", label = TRUE, pt.size = 0.8)
+```
+
+<img src="/assets/img/UMAP_predicted_cell_type_splitBy_sampleType.png" alt="gui1" width="1200"/>
