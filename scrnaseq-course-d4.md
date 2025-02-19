@@ -108,3 +108,22 @@ pred.allsamples.df <- data.frame(cell_ID = row.names(pred.allsamples), pred.alls
 rownames(pred.allsamples.df) <- NULL
 ```
 
+Next, select the `cell_ID` and `labels` columns and store the columns in a new dataframe.
+
+```
+pred.allsamples.df_labels <- pred.allsamples1.df[,c(1,ncol(pred.allsamples1.df)-2)]
+```
+
+Create a copy of `allsamplesUMAP` object and call it `allsamplesUMAP1` so that any changes that are made does not affect the original object.
+
+```
+allsamplesUMAP1 <- allsamplesUMAP
+```
+
+Now, add `cell_ID` column to the `allsamplesUMAP1` seurat object which is copied from the row names in the metadata.
+
+```
+allsamplesUMAP1@meta.data <- data.frame(cell_ID = row.names(allsamplesUMAP1@meta.data), allsamplesUMAP1@meta.data)
+```
+
+Also, create another column called `predicted_cell_type_SingleR` column in the metadata of `allsamplesUMAP1` object. Dont worry. The values in this column will get replaced with the predicted cell types using SingleR.
