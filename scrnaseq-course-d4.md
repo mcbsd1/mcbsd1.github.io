@@ -269,3 +269,26 @@ plot_cells(cds3,
 - Monocle uses a technique called community detection (Leiden algorithm) to group cells.
 - Leiden Algorithm identifies clusters (or communities) of cells in a graph-based representation of scRNA-seq data.
 - The method is an improvement over the Louvain algorithm and ensures better partitioning of cells into distinct groups.
+
+Run the `cluster_cells()` command on cds3 object. 
+
+```
+cds4 <- cluster_cells(cds3)
+```
+
+---
+#### Building trajectory graph
+---
+
+- The `learn_graph()` function in Monocle3 constructs the principal graph (trajectory) that models the differentiation paths of cells in scRNA-seq data.
+- After UMAP, `learn_graph()` fits a graph that captures the main differentiation pathways among cells.
+- The graph connects similar cells and identifies possible lineage relationships.
+- After running `learn_graph()`, you can assign a root node and use `order_cells()` to calculate pseudotime.
+
+Run the `learn_graph()` command on cds4 object.
+
+```
+cds5 <- learn_graph(cds4)
+```
+
+
