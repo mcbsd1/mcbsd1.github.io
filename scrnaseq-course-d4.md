@@ -412,3 +412,32 @@ gene_module_df <- find_gene_modules(cds_subset[pr_deg_ids,], resolution=0.001)
 
 - The next command `aggregate_gene_expression()` is used to summarize gene expression levels across groups of cells based on gene modules or other annotations.
 - This helps in identifying patterns of gene expression across different cell clusters, pseudotime states, or biological conditions. 
+
+```
+agg_mat <- aggregate_gene_expression(cds_subset, gene_module_df)
+```
+
+- The next step is to perform Hierarchical Clustering of Gene Modules.
+- The command performs hierarchical clustering on the aggregated gene expression matrix.
+
+```
+module_dendro <- hclust(dist(agg_mat))
+```
+
+- In the next step, we need to reorder Gene Modules for Better Visualization based on hierarchical clustering results (`module_dendro$order`).
+
+```
+gene_module_df$module <- factor(gene_module_df$module, 
+                                levels = row.names(agg_mat)[module_dendro$order])
+```
+
+Finally we can visualize the Cells and Their Gene Expression which highlights expression of genes within each module.
+
+```
+plot_cells(cds_subset,
+           genes=gene_module_df,
+           label_cell_groups=FALSE,
+           show_trajectory_graph=FALSE)
+```
+
+<img src="/assets/img/pseudotime_gene_module_plot.png" alt="gui1" width="1200"/>
