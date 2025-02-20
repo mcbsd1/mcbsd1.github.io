@@ -291,4 +291,44 @@ Run the `learn_graph()` command on cds4 object.
 cds5 <- learn_graph(cds4)
 ```
 
+---
+#### Ordering cells in pseudotime
+---
+
+- The next step is to order cells in pseudotime.
+- The `order_cells()` function in Monocle3 assigns a pseudotime value to each cell based on a learned trajectory.
+- This helps in studying how cells progress along differentiation or other dynamic processes.
+- To order the cells, simply execute the following command which will open up another window for you to choose the root node in the differentiation pathway.
+
+```
+cds6 <- order_cells(cds5)
+```
+
+**Alternatively**, the function also provides an option to specify the principal nodes manually. In order to see all the principal nodes, you will need to plot the UMAP again with `label_principal_points = TRUE`.
+
+```
+plot_cells(cds5,
+           label_groups_by_cluster=FALSE,
+           label_leaves=FALSE,
+           label_branch_points=FALSE, 
+           label_principal_points = TRUE)
+```
+
+- Locate the point in the middle which corresponds to Y_46.
+- **Which command will you execute in order to use this principal node ?**
+
+---
+#### Constructing pseudotime plot
+---
+
+- Once the principal node is chosen, you can construct pseudotime plot using `plot_cells()` function with the parameter `color_cells_by` set to pseudotime.
+
+```
+plot_cells(cds6,
+           color_cells_by = "pseudotime",
+           label_cell_groups=FALSE,
+           label_leaves=FALSE,
+           label_branch_points=FALSE,
+           graph_label_size=1.5)
+```
 
