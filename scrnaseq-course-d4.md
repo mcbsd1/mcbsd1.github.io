@@ -374,3 +374,17 @@ plot_genes_in_pseudotime(AFD_lineage_cds,
 
 
 <img src="/assets/img/plot_genes_in_pseudotime_AFD.png" alt="gui1" width="1200"/>
+
+
+---
+#### Analyzing branches in single-cell trajectories
+---
+
+- Analyzing the genes that are regulated around trajectory branch points often provides insights into the genetic circuits that control cell fate decisions.
+- Monocle can help you drill into a branch point that corresponds to a fate decision in your system.
+- You can do so by selecting the cells (and branch point) of interest using the `choose_cells()` command:
+
+```
+cds_subset <- choose_cells(cds6)
+```
+
