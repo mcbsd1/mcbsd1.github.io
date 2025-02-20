@@ -345,13 +345,13 @@ plot_cells(cds6,
 - We will choose AFD neuronal cells which are the main thermosensors in *C.elegens*.
 - **gcy-8** (Guanylyl Cyclase-8), **dac-1** (Dachshund Homolog-1) and **oig-8** (Immunoglobulin Superfamily Protein OIG-8) are the genes involved in thermosensation, neuronal development and neuronal connectivity.
 
-<u>**Step-1: Define the Genes of Interest**<\u>
+<u>**Step-1: Define the Genes of Interest**</u>
 
 ```
 AFD_genes <- c("gcy-8", "dac-1", "oig-8")
 ```
 
-<u>**Step-2: Subset the CellDataSet for AFD Lineage**<\u>
+<u>**Step-2: Subset the CellDataSet for AFD Lineage**</u>
 
 ```
 AFD_lineage_cds <- cds6[rowData(cds6)$gene_short_name %in% AFD_genes,
@@ -362,7 +362,7 @@ AFD_lineage_cds <- cds6[rowData(cds6)$gene_short_name %in% AFD_genes,
   - `rowData(cds6)$gene_short_name %in% AFD_genes` filters the dataset to include only the genes `"gcy-8"`, `"dac-1"`, and `"oig-8"`.
 - The information about the pseudotime is stored within `AFD_lineage_cds@colData`.
 
-<u>**Step 3: Plot Gene Expression Over Pseudotime**<\u>
+<u>**Step 3: Plot Gene Expression Over Pseudotime**</u>
 
 ```
 plot_genes_in_pseudotime(AFD_lineage_cds,
