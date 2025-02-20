@@ -201,7 +201,6 @@ Lets break it down:
 
 - With this command, the number of cells reduces to 1235.
 
-
 ---
 #### Normalizing the data
 ---
@@ -423,6 +422,70 @@ DimPlot(dat2UMAP, reduction = "umap")
 <img src="/assets/img/umap.png" alt="gui1" width="1200"/>
 
 <br>
+
+---
+#### Doublet detection and removal
+---
+
+- In scRNA-seq experiments, doublets are artifactual libraries generated from two cells.
+- They typically arise due to errors in cell sorting or capture, especially in droplet-based protocols involving thousands of cells.
+- In this workshop, we will be using `DoubletFinder`.
+- It is a tool used to detect and remove doublets (artificially merged cells) in scRNA-seq data.
+- Below is a step-by-step guide to doublet detection and removal in Seurat using DoubletFinder.
+
+**Step 1: Install and Load Required Packages**
+
+```
+remotes::install_github('chris-mcginnis-ucsf/DoubletFinder')
+```
+
+Once the package is installed, the load the library.
+
+```
+library(DoubletFinder)
+```
+
+**Step 2: Parameter Sweeping for pK Selection**
+
+Sweep a range of parameters to find the optimal pK.
+
+```
+sweep.res.list <- paramSweep(dat2UMAP, PCs = 1:20, sct = TRUE)
+sweep.stats <- summarizeSweep(sweep.res.list, GT = FALSE)
+bcmvn <- find.pK(sweep.stats)
+pk <- as.numeric(as.vector(bcmvn$pK)[which.max(bcmvn$BCmetric)])
+```
+
+- `paramSweep()`: Tests multiple pK (parameter K) values using PCs 1 to 20.
+- `summarizeSweep()`: Summarizes results into a dataframe.
+- `find.pK()`: Finds the best pK using a "BCmetric" score.
+- `which.max(bcmvn$BCmetric)`: Selects the pK value with the highest BCmetric, as this gives the best separation between doublets and singlets.
+
+**Why do we need pK?**
+
+- `pK` is a clustering resolution parameter that affects doublet detection.
+- A higher BCmetric means better performance of a given pK.
+
+**Step 3: Estimate the Expected Number of Doublets**
+
+```
+annotations <- dat2UMAP@active.ident
+homotypic.prop <- modelHomotypic(annotations)
+nExp_poi <- round(0.076 * length(dat2UMAP@active.ident))
+nExp_poi.adj <- round(nExp_poi * (1 - homotypic.prop))
+```
+
+- `modelHomotypic(annotations)`: Estimates homotypic doublets (cells of the same type that are mistakenly identified as a doublet).
+- `nExp_poi <- round(0.076 * length(p1tumorFilteredObj@active.ident))`:
+  - Uses 10X Genomics’ doublet rate formula: ~7.6% (0.076) × number of cells.
+  - This gives the expected number of doublets (`nExp_poi`) in the dataset.
+- `nExp_poi.adj <- round(nExp_poi * (1 - homotypic.prop))`
+  - Adjusts for homotypic doublets to avoid over-filtering.
+
+**Why adjust for homotypic proportion?**
+
+- If cells in a cluster are mostly from the same cell type, they might be misclassified as doublets.
+- This adjustment prevents over-filtering of true biological clusters.
 
 ---
 ### Data Visualisation
