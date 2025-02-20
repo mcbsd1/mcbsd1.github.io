@@ -786,11 +786,13 @@ rm -r 1k_mouse_kidney_CNIK_3pv3_fastqs
 
 - For every dataset we run on Nextflow, we will need reference files: **FASTA file** and **GTF file**
 - If you are working with human data (fastq files)
+- Navigate to the `resources` folder.
 - On linux terminal, execute the following commands:
 
 ---
 ```
-bash bin/download-ref-genome.sh
+cd resources
+bash ../bin/download-ref-genome.sh
 ```
 
 ---
