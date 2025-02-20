@@ -811,3 +811,25 @@ suppliedID,analysisID,sampleGroup
 - This contains information such as the identifier i.e suppliedID, analysisID and sampleGroup columns.
 - The sampleGroup should contain information such as `normal` and `tumor`, or `healthy` and `diseased`, etc.
 - Since this example dataset is extracted from C57/Bl6 adult mouse kidney, the sampleGroup column has the value as `C57_Bl6`.
+
+---
+---
+### Configuration file
+---
+---
+
+- Once the samplesheet is created, the nextflow configuration file `nextflow.config` needs to be created.
+- Open the `nextflow.config` file using the following command:
+
+```
+nano nextflow.config
+```
+
+- Replace the `c.xxxxxx` in the `userID` parameter to your HAWK user ID as found on **MySCW dashboard**.
+
+For example,
+
+```
+userID = "c.123456"
+```
+
