@@ -388,3 +388,4 @@ plot_genes_in_pseudotime(AFD_lineage_cds,
 cds_subset <- choose_cells(cds6)
 ```
 
+<img src="/assets/img/choose_cells.png" alt="gui1" width="1200"/>
