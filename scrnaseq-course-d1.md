@@ -728,6 +728,7 @@ chmod +x *.sh
     │   └── fastq/
     ├── main.nf
     ├── nextflow.config
+    ├── run_nextflow.sh
     └── output/
 ```
 
@@ -833,3 +834,44 @@ For example,
 userID = "c.123456"
 ```
 
+- Save the file by pressing `cntr + x`
+- Press `y` and press enter
+
+---
+---
+### Running the workflow
+---
+---
+
+- Simply run the workflow by typing the following command:
+
+```
+sbatch run_nextflow.nf
+```
+
+Once the job is submitted, you can track the status of the job by typing:
+
+```
+squeue -u c.123456
+```
+
+When the job is finished, it will create `results` folder within the `scrnaseq` folder which looks like this.
+
+```
+.
+└── scrnaseq/
+    ├── bin/
+    ├── resources/
+    │   ├── index
+    │   ├── Mus_musculus.GRCm39.dna_sm.primary_assembly.fa
+    │   └── Mus_musculus.GRCm39.113.gtf
+    ├── input
+    ├── main.nf
+    ├── nextflow.config
+    ├── run_nextflow.sh
+    ├── results
+    │   ├── cellranger_count_1k_mouse_kidney_CNIK_3pv3
+    │   ├── aggr.csv
+    │   └── aggregation
+    └── output/
+```
