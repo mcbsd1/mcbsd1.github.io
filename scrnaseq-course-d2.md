@@ -487,6 +487,95 @@ nExp_poi.adj <- round(nExp_poi * (1 - homotypic.prop))
 - If cells in a cluster are mostly from the same cell type, they might be misclassified as doublets.
 - This adjustment prevents over-filtering of true biological clusters.
 
+**Step 4: Run DoubletFinder (First Pass)**
+
+```
+seuratDoublet <- doubletFinder(dat2UMAP, PCs = 1:20, pN = 0.25, pK = pk, 
+                               nExp = nExp_poi, reuse.pANN = FALSE, sct = TRUE)
+```
+
+- This step assigns a probability score (`pANN`) to each cell, indicating how likely it is a doublet.
+
+**Step 5: Prepare for Second Pass**
+
+
+```
+pANN_String <- paste("pANN_0.25_", pk, "_", list(nExp_poi), sep="")
+```
+
+- Creates a string name for the pANN column, which stores doublet probability scores.
+
+**Step 6: Run DoubletFinder (Second Pass - Adjusted for Homotypic Doublets)**
+
+```
+dat2UMAPDoublet <- doubletFinder(seuratDoublet, PCs = 1:10, pN = 0.25, pK = pk, 
+                                        nExp = nExp_poi.adj, reuse.pANN = pANN_String)
+```
+
+- The first pass identifies all doublets.
+- The second pass refines the classification by removing homotypic doublets.
+
+**Step 7: Append doublets column in metadata**
+
+```
+# Use this format: DF.classifications_pN_pk_nExp_poi
+
+# Find out pk value
+print(pk)
+
+# Find out nExp_poi value
+print(nExp_poi)
+
+# Replace the DF.classifications_pN_pk_nExp_poi with the above values
+
+# For example, if pk is 0.24 and nExp_poi is 134, then execute the following command
+
+classificationsCol <- dat2UMAPDoublet@meta.data["DF.classifications_0.25_0.24_134"]
+
+dat2UMAPDoublet@meta.data[,"DF_hi.lo"] <- classificationsCol[1]
+
+```
+
+<br>
+
+---
+### Remove doublets and pre-process singlets
+---
+
+Remove the doublets and select Singlets by performing the following command:
+
+```
+dat2UMAPSinglets <- subset(dat2UMAPDoublet, subset = DF_hi.lo == "Singlet")
+```
+
+Once the doublets are removed and singlets are selected, then re-run the following steps as performed above:
+
+```
+singletsNormalisedObj <- NormalizeData(object = dat2UMAPSinglets, normalization.method = "LogNormalize", scale.factor = 10000)
+singletsNormalised2Obj <- FindVariableFeatures(singletsNormalisedObj, selection.method = "vst", nfeatures = 2000)
+all.genes <- rownames(singletsNormalised2Obj)
+singletsScaledObj <- ScaleData(object = singletsNormalised2Obj, features = all.genes)
+singletsScaled2Obj <- RunPCA(object = singletsScaledObj, features = VariableFeatures(object = singletsScaledObj), do.print = TRUE, ndims.print = 1:5, nfeatures.print = 5)
+ElbowPlot(singletsScaled2Obj, ndims = 50)
+seuratFindNeighbors <- FindNeighbors(
+    singletsScaled2Obj,
+    reduction = "pca",
+    dims = 1:25,
+    do.plot = FALSE,
+    graph.name = NULL,
+    k.param = 30
+)
+singletsFindClusters <- FindClusters(object = singletsFindNeighbors)
+singletsUMAP <- RunUMAP(singletsFindClusters, reduction = "pca", dims = 1:25, n.neighbors = 30L, min.dist = 0.3, seed.use = 123456L)
+```
+
+Once the pre-processing steps are finished, construct the UMAP using the `DimPlot` function.
+
+```
+DimPlot(singletsUMAP, reduction = "umap")
+
+```
+
 ---
 ### Data Visualisation
 ---
