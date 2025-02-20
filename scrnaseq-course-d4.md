@@ -332,3 +332,43 @@ plot_cells(cds6,
            graph_label_size=1.5)
 ```
 
+---
+#### Plotting genes in pseudotime
+---
+
+- The `plot_genes_in_pseudotime()` function visualizes how gene expression changes over pseudotime, helping to understand dynamic gene regulation during cellular transitions.
+- **What it does:**
+  - Plots Gene Expression Over Pseudotime
+  - Highlights Trends in Expression
+  - Facilitates Interpretation of Cell State Transitions
+
+- We will choose AFD neuronal cells which are the main thermosensors in *C.elegens*.
+- **gcy-8** (Guanylyl Cyclase-8), **dac-1** (Dachshund Homolog-1) and **oig-8** (Immunoglobulin Superfamily Protein OIG-8) are the genes involved in thermosensation, neuronal development and neuronal connectivity.
+
+<u>**Step-1: Define the Genes of Interest**<\u>
+
+```
+AFD_genes <- c("gcy-8", "dac-1", "oig-8")
+```
+
+<u>**Step-2: Subset the CellDataSet for AFD Lineage**<\u>
+
+```
+AFD_lineage_cds <- cds6[rowData(cds6)$gene_short_name %in% AFD_genes,
+                        colData(cds6)$cell.type %in% c("AFD")]
+```
+
+- Subsetting rows:
+  - `rowData(cds6)$gene_short_name %in% AFD_genes` filters the dataset to include only the genes `"gcy-8"`, `"dac-1"`, and `"oig-8"`.
+- The information about the pseudotime is stored within `AFD_lineage_cds@colData`.
+
+<u>**Step 3: Plot Gene Expression Over Pseudotime**<\u>
+
+```
+plot_genes_in_pseudotime(AFD_lineage_cds,
+                         color_cells_by="embryo.time.bin",
+                         min_expr=0.5)
+```
+
+- `color_cells_by="embryo.time.bin"`: Colors the cells based on embryonic time bins, helping visualize gene expression patterns over developmental stages.
+
