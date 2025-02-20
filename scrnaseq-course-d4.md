@@ -372,3 +372,5 @@ plot_genes_in_pseudotime(AFD_lineage_cds,
 
 - `color_cells_by="embryo.time.bin"`: Colors the cells based on embryonic time bins, helping visualize gene expression patterns over developmental stages.
 
+
+<img src="/assets/img/plot_genes_in_pseudotime_AFD.png" alt="gui1" width="1200"/>
