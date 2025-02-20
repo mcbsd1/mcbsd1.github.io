@@ -389,3 +389,26 @@ cds_subset <- choose_cells(cds6)
 ```
 
 <img src="/assets/img/choose_cells.png" alt="gui1" width="1200"/>
+
+- Use the `graph_test()` on the subset.
+- This will identify genes with interesting patterns of expression that fall only within the region of the trajectory you selected, giving you a more refined and relevant set of genes.
+- It identifies differentially expressed genes along the trajectory.
+- `subset_pr_test_res` contains statistical results (e.g., q-values, p-values) for each gene.
+- The next command, filters genes where q_value < 0.05 (statistically significant).
+- The gene IDs are stored in `pr_deg_ids`
+
+```
+subset_pr_test_res <- graph_test(cds_subset, neighbor_graph="principal_graph", cores=4)
+pr_deg_ids <- row.names(subset(subset_pr_test_res, q_value < 0.05))
+```
+
+- The next step is to find gene modules.
+- The `find_gene_modules()` function is used to identify groups of genes that show similar expression patterns across cells.
+- These groups, or gene modules, can help in understanding co-regulated genes, biological pathways, and cell-state transitions.
+
+```
+gene_module_df <- find_gene_modules(cds_subset[pr_deg_ids,], resolution=0.001)
+```
+
+- The next command `aggregate_gene_expression()` is used to summarize gene expression levels across groups of cells based on gene modules or other annotations.
+- This helps in identifying patterns of gene expression across different cell clusters, pseudotime states, or biological conditions. 
