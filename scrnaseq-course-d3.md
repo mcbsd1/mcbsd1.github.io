@@ -381,6 +381,44 @@ allsamples_seurat1 <- JoinLayers(allsamples_seurat)
   - Any other assays or metadata layers
 - This is useful for downstream analysis where you might need access to both raw and batch-corrected data.
 
+
+---
+### Adding sample annotations
+---
+
+- The next step after merging the samples is to add the annotations to the seurat object.
+- These annotations can be:
+  - Sample annotations such as P1-Tumor, P1-Normal, etc.
+  - Sample types such as Tumor/Normal
+  - Patient info such as P1, P2, P3, P4
+- We will add these annotations in a for loop:
+
+```
+allsamples_seurat1$geo_ID <- Idents(allsamples_seurat1)
+
+geoIDs <- c("GSM3304007", "GSM3304008", "GSM3304009", "GSM3304010", "GSM3304011", "GSM3304012", "GSM3304013", "GSM3304014")
+
+allsamples_seurat1$sampleName <- Idents(allsamples_seurat1)
+
+allsamples_seurat1$sampleName <- plyr::mapvalues(
+    x = allsamples_seurat1$orig.ident, 
+    from = c("GSM3304007", "GSM3304008", "GSM3304009", "GSM3304010", "GSM3304011", "GSM3304012", "GSM3304013", "GSM3304014"), 
+    to = c("P1_Tumor", "P1_Normal", "P2_Tumor", "P2_Normal", "P3_Tumor", "P3_Normal", "P4_Tumor", "P4_Normal")
+)
+
+allsamples_seurat1$sampleType <- plyr::mapvalues(
+    x = allsamples_seurat1$orig.ident, 
+    from = c("GSM3304007", "GSM3304008", "GSM3304009", "GSM3304010", "GSM3304011", "GSM3304012", "GSM3304013", "GSM3304014"), 
+    to = c("Tumor", "Normal", "Tumor", "Normal", "Tumor", "Normal", "Tumor", "Normal")
+)
+
+allsamples_seurat1$patientInfo <- plyr::mapvalues(
+    x = allsamples_seurat1$orig.ident, 
+    from = c("GSM3304007", "GSM3304008", "GSM3304009", "GSM3304010", "GSM3304011", "GSM3304012", "GSM3304013", "GSM3304014"), 
+    to = c("P1", "P1", "P2", "P2", "P3", "P3", "P4", "P4")
+)
+```
+
 ---
 ### Perform Data Scaling
 ---
