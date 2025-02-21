@@ -604,3 +604,27 @@ FeaturePlot(allsamplesUMAP, features = c("JUN", "MALAT1"), split.by = "sampleTyp
   - All cell markers: [download]([http://xteam.xbio.top/CellMarker/download/all_cell_markers.txt](http://117.50.127.228/CellMarker/CellMarker_download_files/file/Cell_marker_All.xlsx))
 
 
+---
+### Finding marker genes for NSCLC data in CellMarker database
+---
+
+- Load the dataset in Rstudio. You will need to have `readxl` library installed.
+
+```
+install.packages("readxl")
+library(readxl)
+```
+
+- Once the library is installed and loaded, load the database using `read_xlsx` function.
+
+```
+cellMarkerDF <- read_xlsx("Cell_marker_Human.xlsx")
+```
+
+Type `cellMarkerDF` in the console to view the dataframe.
+
+```
+cellMarkerDF
+```
+
+
