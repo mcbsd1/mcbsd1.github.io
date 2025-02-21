@@ -692,3 +692,17 @@ print(cell_type_counts_df)
 
 This gives us the following table for `Cluster 0`:
 
+Cell_Type|Count|
+|:----:|:----------|
+B cell|8|
+T cell|5|
+Macrophage|14|
+Epithelial cell|5|
+Monocyte|2|
+Myeloid cel|5|
+Dendritic cell|2|
+M1 macrophage|2|
+M2 macrophage|3|
+Natural killer cell|1|
+Fibroblast|4|
+Plasma cell|2|
