@@ -776,4 +776,4 @@ Natural killer cell|1|
 Fibroblast|4|
 Plasma cell|2|
 
-Finally, assign the cell types in the same manner as in Method 1.
+Finally, assign the cell types in the same manner as in **Method 1**.
