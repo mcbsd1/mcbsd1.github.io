@@ -174,6 +174,53 @@ p1tumorFilteredObj <- subset(p1tumor, subset = nFeature_RNA > 200 & nFeature_RNA
 ```
 
 ---
+#### Normalization, Scaling and Dimensional Reduction
+---
+
+Once the samples are filtered, then run the following steps for each sample in the iteration:
+
+```
+# Define the sample names
+samples <- c("p1tumor", "p1normal", "p2tumor", "p2normal", "p3tumor", "p3normal", "p4tumor", "p4normal")
+
+# Loop through each sample
+for (sample in samples) {
+  
+  # Get the original Seurat object dynamically
+  seurat_obj <- get(paste0(sample, "FilteredObj"))
+  
+  normalized_obj <- NormalizeData(object = seurat_obj, normalization.method = "LogNormalize", scale.factor = 10000)
+  
+  normalized2_obj <- FindVariableFeatures(normalized_obj, selection.method = "vst", nfeatures = 2000)
+  
+  all_genes <- rownames(normalized2_obj)
+  scaled_obj <- ScaleData(object = normalized2_obj, features = all_genes)
+  
+  scaled2_obj <- RunPCA(object = scaled_obj, features = VariableFeatures(object = scaled_obj), 
+                        ndims.print = 1:5, nfeatures.print = 5)
+  
+  ElbowPlot(scaled2_obj, ndims = 50)
+  
+  neighbors_obj <- FindNeighbors(scaled2_obj, reduction = "pca", dims = 1:25, k.param = 30)
+  
+  clusters_obj <- FindClusters(object = neighbors_obj)
+  
+  umap_obj <- RunUMAP(clusters_obj, reduction = "pca", dims = 1:25, n.neighbors = 30L, min.dist = 0.3, seed.use = 123456L)
+  
+  # Store results dynamically in the environment
+  assign(paste0(sample, "NormalisedObj"), normalized_obj)
+  assign(paste0(sample, "Normalised2Obj"), normalized2_obj)
+  assign(paste0(sample, "ScaledObj"), scaled_obj)
+  assign(paste0(sample, "Scaled2Obj"), scaled2_obj)
+  assign(paste0(sample, "FindNeighbors"), neighbors_obj)
+  assign(paste0(sample, "FindClusters"), clusters_obj)
+  assign(paste0(sample, "UMAP"), umap_obj)
+}
+```
+
+
+
+---
 ### Doublet removal
 ---
 
