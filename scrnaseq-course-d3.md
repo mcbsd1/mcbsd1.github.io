@@ -586,7 +586,7 @@ FeaturePlot(allsamplesUMAP, features = c("JUN", "MALAT1"), split.by = "sampleTyp
 <br>
 
 ---
-## Cell Type Identification
+## Method 1: Cell Type Identification - Knowledge-based approach
 ---
 
 -To identify and clssify the cell types, it is often recommended to obtain a list of well-established markers and assign these markers to the clusters in which they are primarily expressed.
@@ -655,7 +655,7 @@ DimPlot(allsamplesUMAP1, reduction = "umap", label = TRUE, pt.size = 0.8)
 ```
 
 ---
-## Cell Type Identification using CellMarker
+## Method 2: Cell Type Identification using CellMarker
 ---
 
 - CellMarker is a manually curated database human and mouse species.
@@ -775,3 +775,5 @@ M2 macrophage|3|
 Natural killer cell|1|
 Fibroblast|4|
 Plasma cell|2|
+
+Assign the celltypes the same way as done for the 
