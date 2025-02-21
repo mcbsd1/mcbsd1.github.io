@@ -633,6 +633,25 @@ cellMarkerDF
 - Therefore we will be using these patterns to filter the dataframe to limit the markers to these cancer types.
 - You can add additional filter parameters such as "cell_type" column which contains two entries: "Normal cell" and "Cancer cell"
 
-
-
+```
 patterns <- c("non-small cell", "lung cancer")
+filtered_df <- cellmarkers %>% 
+  filter(grepl(paste(patterns, collapse = "|"), cancer_type, ignore.case = TRUE))
+
+# Extract only the "cell_name", "marker" and "tissue_type" columns from the filtered_df dataframe
+filtered_df1 <- filtered_df[,c("cell_name","marker","tissue_type")]
+
+# Rename the "marker" column to "gene"
+colnames(filtered_df1)[2] = "gene"
+```
+
+Filter the `allsamples.markers` to select only the markers which are differentially expressed with adjusted p_value less than or equal to 0.05.
+
+```
+allsamples.markers.sig <- allsamples.markers[allsamples.markers$p_val_adj <= 0.05, ]
+```
+
+```
+allsamples.markers_sig_annot <- merge(allsamples.markers_sig, filtered_df1, by="gene", all.x=T, sort=F)
+```
+
