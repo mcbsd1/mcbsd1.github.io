@@ -586,6 +586,75 @@ FeaturePlot(allsamplesUMAP, features = c("JUN", "MALAT1"), split.by = "sampleTyp
 <br>
 
 ---
+## Cell Type Identification
+---
+
+-To identify and clssify the cell types, it is often recommended to obtain a list of well-established markers and assign these markers to the clusters in which they are primarily expressed.
+- Follow these steps for defining the celltypes:
+- Collect Cell Type Markers from Published Papers
+  - Search for scRNA-seq studies on similar tissue/cancer types.
+  - Extract well-established marker genes for different cell types.
+  - Example marker genes for common immune cells in NSCLC:
+    - B cells → CD19, MS4A1
+    - T cells → CD3D, CD3E, CD4, CD8A
+    - Macrophages → CD68, CD163, MARCO
+    - Epithelial cells → EPCAM, KRT19
+    - Fibroblasts → COL1A1, DCN
+    - Dendritic cells → CD1C, CLEC9A
+
+- Generate a FeaturePlot and DotPlot to Visualize Marker Expression
+
+- Fro example, the T-cell markers can be plotted using the following commands:
+
+```
+DefaultAssay(allsamplesUMAP) <- "RNA"
+
+# T-cells
+tcellmarkers <- c("CD3D", "CD3E", "CD3G", "CD4", "CD8A", "CD40")
+
+FeaturePlot(allsamplesUMAP, features = tcellmarkers, pt.size = 0.5)
+DotPlot(allsamplesUMAP, features = tcellmarkers, cols = c("blue", "red"), dot.scale = 8) + RotatedAxis()
+```
+
+- In order to assign to assign the cell type, first create a copy of `allsamplesUMAP` object and call it as `allsamplesUMAP1`.
+- The `Idents` are replaced with the predicted celltype using the following commands:
+
+```
+allsamplesUMAP1 <- allsamplesUMAP
+allsamplesUMAP1[["org.ident"]] <- Idents(object = allsamplesUMAP1)
+
+allsamplesUMAP1 <- RenameIdents(object = allsamplesUMAP1, 
+                                `0` = "T cells", 
+                                `1` = "Macrophages", 
+                                `2` = "M1 Macrophages",
+                                `3` = "T cells",
+                                `4` = "Epithelial cells",
+                                `5` = "NK cells",
+                                `6` = "Epithelial cells",
+                                `7` = "Macrophages",
+                                `8` = "Epithelial cells",
+                                `9` = "M1 Macrophages",
+                                `10` = "M1 Macrophages",
+                                `11` = "NK cells",
+                                `12` = "Epithelial cells",
+                                `13` = "NK cells",
+                                `14` = "Epithelial cells",
+                                `15` = "Alveolar Type II (AT2) Cells",
+                                `16` = "Fibroblasts",
+                                `17` = "B cells",
+                                `18` = "M2 Macrophages",
+                                `19` = "Epithelial cells",
+                                `20` = "Epithelial cells",
+                                `21` = "Epithelial cells")
+```
+
+Plot the UMAP using the predicted celltype using the following command:
+
+```
+DimPlot(allsamplesUMAP1, reduction = "umap", label = TRUE, pt.size = 0.8)
+```
+
+---
 ## Cell Type Identification using CellMarker
 ---
 
