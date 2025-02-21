@@ -627,4 +627,12 @@ Type `cellMarkerDF` in the console to view the dataframe.
 cellMarkerDF
 ```
 
+- We will now filter the rows based on target cancer type.
+- We are interested in viewing those markers expressed in NSCLC.
+- From the database, there are "non-small cell" and "lung cancer" types available.
+- Therefore we will be using these patterns to filter the dataframe to limit the markers to these cancer types.
+- You can add additional filter parameters such as "cell_type" column which contains two entries: "Normal cell" and "Cancer cell"
 
+
+
+patterns <- c("non-small cell", "lung cancer")
