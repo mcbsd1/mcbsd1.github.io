@@ -635,7 +635,7 @@ cellMarkerDF
 
 ```
 patterns <- c("non-small cell", "lung cancer")
-filtered_df <- cellmarkers %>% 
+filtered_df <- cellMarkerDF %>% 
   filter(grepl(paste(patterns, collapse = "|"), cancer_type, ignore.case = TRUE))
 
 # Extract only the "cell_name", "marker" and "tissue_type" columns from the filtered_df dataframe
@@ -656,4 +656,39 @@ Nxt, merge the two dataframes `allsamples.markers.sig` and `filtered_df1` by `ge
 ```
 allsamples.markers_sig_annot <- merge(allsamples.markers.sig, filtered_df1, by="gene", all.x=T, sort=F)
 ```
+
+Get the markers expressed in a specific cluster, such as cluster 0.
+
+```
+cluster0_cellmarker <- allsamples.markers_sig_annot[which(allsamples.markers_sig_annot$cluster == 0),]
+```
+
+In order to assign the celltypes, an automated way is to define the celltypes for the NSCLC data and find out the frequency of each celltype in each cluster.
+
+For example, to find out the frequency of the celltypes in `Cluster 0`, run the following loop:
+
+```
+# Define the cell types to search for
+cell_types <- c("B cell", "T cell", "Macrophage", "Epithelial cell", "Monocyte", 
+                "Myeloid cell", "Dendritic cell", "M1 macrophage", "M2 macrophage", 
+                "Natural killer cell", "Fibroblast", "Plasma cell")
+
+# Initialize an empty list to store counts
+cell_type_counts <- list()
+
+# Loop through each cell type and count occurrences
+for (cell_type in cell_types) {
+    count <- sum(grepl(cell_type, cluster0_cellmarker$cell_name, ignore.case = TRUE))
+    cell_type_counts[[cell_type]] <- count
+    print(paste(cell_type, "count:", count))
+}
+
+# Convert the list to a dataframe
+cell_type_counts_df <- data.frame(Cell_Type = names(cell_type_counts), Count = unlist(cell_type_counts))
+
+# Print the final counts
+print(cell_type_counts_df)
+```
+
+This gives us the following table for `Cluster 0`:
 
