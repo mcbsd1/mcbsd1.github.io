@@ -231,35 +231,54 @@ The results for each sample will be stored in its corresponding sample name + UM
 - The next step is to identify doublets in the datasets. For this we will be using `DoubletFinder` tool in R.
 - Follow the steps as mentioned to identify and label the cells as `Singlet` or `Doublet`.
 
-The first sample has been done for you:
+Run the loop to generate sampleName+FilteredDoublet file for every sample:
 
 ```
-sweep.res.list <- paramSweep(p1tumorFilteredObj, PCs = 1:20, sct = TRUE)
-sweep.stats <- summarizeSweep(sweep.res.list, GT = FALSE)
-bcmvn <- find.pK(sweep.stats)
-pk <- as.numeric(as.vector(bcmvn$pK)[which.max(bcmvn$BCmetric)])
+# Define the sample names
+samples <- c("p1tumor", "p1normal", "p2tumor", "p2normal", "p3tumor", "p3normal", "p4tumor", "p4normal")
 
-annotations <- p1tumorFilteredObj@active.ident
-homotypic.prop <- modelHomotypic(annotations)
-nExp_poi <- round(0.076*length(p1tumorFilteredObj@active.ident))
-nExp_poi.adj <- round(nExp_poi*(1-homotypic.prop))
-
-seuratDoublet <- doubletFinder(p1tumorFilteredObj, PCs = 1:20, pN = 0.25, pK = pk, nExp = nExp_poi, reuse.pANN = FALSE, sct = TRUE)
-pANN_String <- paste("pANN_0.25_",pk,"_",list(nExp_poi),sep="")
-
-p1tumorFilteredDoublet <- doubletFinder(seuratDoublet, PCs = 1:10, pN = 0.25, pK = pk, nExp = nExp_poi.adj, reuse.pANN = pANN_String)
+# Loop through each sample
+for (sample in samples) {
+  
+  # Retrieve the filtered Seurat object dynamically
+  seurat_obj <- get(paste0(sample, "UMAP"))
+  
+  # Perform parameter sweep
+  sweep_res_list <- paramSweep(seurat_obj, PCs = 1:20, sct = TRUE)
+  sweep_stats <- summarizeSweep(sweep_res_list, GT = FALSE)
+  bcmvn <- find.pK(sweep_stats)
+  pk <- as.numeric(as.vector(bcmvn$pK)[which.max(bcmvn$BCmetric)])
+  
+  # Calculate expected doublet proportion
+  annotations <- seurat_obj@active.ident
+  homotypic_prop <- modelHomotypic(annotations)
+  nExp_poi <- round(0.076 * length(seurat_obj@active.ident))
+  nExp_poi_adj <- round(nExp_poi * (1 - homotypic_prop))
+  
+  # Run DoubletFinder
+  seuratDoublet <- doubletFinder(seurat_obj, PCs = 1:20, pN = 0.25, pK = pk, nExp = nExp_poi, reuse.pANN = FALSE, sct = TRUE)
+  
+  # Create pANN string
+  pANN_String <- paste("pANN_0.25_", pk, "_", list(nExp_poi), sep = "")
+  
+  # Run DoubletFinder again with adjusted nExp
+  seuratDoubletFinal <- doubletFinder(seuratDoublet, PCs = 1:10, pN = 0.25, pK = pk, nExp = nExp_poi_adj, reuse.pANN = pANN_String)
+  
+  # Extract classification column
+  classCol <- paste("DF.classifications_0.25_", pk, "_", list(nExp_poi), sep = "")
+  classificationsCol <- seuratDoubletFinal@meta.data[grepl(classCol, colnames(seuratDoubletFinal@meta.data))]
+  
+  # Assign doublet classification column
+  seuratDoubletFinal@meta.data[,"DF_hi.lo"] <- classificationsCol[[1]]
+  
+  # Save the final object
+  saveRDS(seuratDoubletFinal, paste0("~/Desktop/Nextflow/scRNAseq_Workshop/Cancer_datasets/", sample, "FilteredDoublet.rds"))
+  
+  # Store the processed object dynamically in the environment
+  assign(paste0(sample, "FilteredDoublet"), seuratDoubletFinal)
+}
 ```
-
-```
-# Use this format: DF.classifications_pN_pk_nExp_poi
-
-classificationsCol <- p1tumorFilteredDoublet@meta.data["DF.classifications_0.25_0.24_134"]
-
-p1tumorFilteredDoublet@meta.data[,"DF_hi.lo"] <- classificationsCol[1]
-
-```
-
-Follow the steps to generate doublet marked objects for rest of the samples.
+This will generate doublet marked objects for all samples.
 
 ---
 #### Singlet selection and doublet removal
