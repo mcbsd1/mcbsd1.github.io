@@ -651,7 +651,9 @@ Filter the `allsamples.markers` to select only the markers which are differentia
 allsamples.markers.sig <- allsamples.markers[allsamples.markers$p_val_adj <= 0.05, ]
 ```
 
+Nxt, merge the two dataframes `allsamples.markers.sig` and `filtered_df1` by `gene` column to append the **cancer_type** 
+
 ```
-allsamples.markers_sig_annot <- merge(allsamples.markers_sig, filtered_df1, by="gene", all.x=T, sort=F)
+allsamples.markers_sig_annot <- merge(allsamples.markers.sig, filtered_df1, by="gene", all.x=T, sort=F)
 ```
 
