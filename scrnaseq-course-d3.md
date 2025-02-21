@@ -218,7 +218,7 @@ for (sample in samples) {
 }
 ```
 
-
+The results for each sample will be stored in its corresponding sample name + UMAP. For example, if you would like to access the object for p3tumor, the results is stored in p3tumorUMAP. For p4normal, the object is p4normalUMAP, and so on.
 
 ---
 ### Doublet removal
