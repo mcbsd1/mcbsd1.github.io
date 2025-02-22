@@ -12,11 +12,13 @@ author: "Sumukh Deshpande"
 
 We will cover:
 
-- Introduction to course.
+- Introduction to the course.
 - Basic Unix.
 - Introduction to HAWK.
 - Basic Unix Continued.
-- Fetch data with nf-core/fetchngs pipeline.
+- Fetching the scrnaseq nextflow pipeline.
+- Setting up the pipeline for execution.
+- Running the pipeline.
 
 ---
 
