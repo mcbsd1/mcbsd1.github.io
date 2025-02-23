@@ -23,7 +23,6 @@ navbar-links:
   About Me: "aboutme"
   scRNAseq Course:
     - Home: "scrnaseq-course-home"
-    - Pre-course: "scrnaseq-course-pre"
     - Day 1: "scrnaseq-course-d1"
     - Day 2: "scrnaseq-course-d22"
     - Day 3: "scrnaseq-course-d33"
