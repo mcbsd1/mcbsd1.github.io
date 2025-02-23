@@ -8,7 +8,6 @@ author: "Sumukh Deshpande"
 # Day 1
 
 ---
----
 
 We will cover:
 
@@ -20,13 +19,10 @@ We will cover:
 - Setting up the pipeline for execution.
 - Running the pipeline.
 
----
-
 <br>
 
 ---
 ## What you will learn on this course:
----
 ---
 
 - Basic Unix commands
@@ -44,7 +40,6 @@ We will cover:
 
 ---
 ## Introduction to Single-Cell RNA-seq
----
 ---
 
 - RNA-seq allows profiling the transcripts in a sample in an efficient and cost-effective way.
@@ -66,7 +61,6 @@ We will cover:
 
 ---
 ## Sample Preparation Protocols
----
 ---
 
 Broadly speaking, a typical scRNA-seq protocol consists of the following steps (illustrated in the figure below):
@@ -98,7 +92,6 @@ Broadly speaking, a typical scRNA-seq protocol consists of the following steps (
 ---
 ## Unix: Configuration
 ---
----
 
 ### Unix: Hardware
 
@@ -129,14 +122,10 @@ information.  Access (reading this information) is faster than the hard drive, a
 
 - They are different because they generally perform specialised functions, for example, mapping next-generation sequence to a genome assembly.
 
-
----
-
 <br>
 ---
 
 ## Basic Unix: Graphical User Interface (GUI) & Command Line/Shell
----
 ---
 
 - All Windows/Mac/Linux PC's use a GUI to allow users to easily navigate and use the PC.
@@ -152,14 +141,12 @@ In simple terms, the window on the computer into which you type a command, is ca
 
 <img src="/assets/img/gui1.png" alt="gui1" width="1200"/>
 
----
-
 <br>
----
 
+---
 ## Setup and Installation
 ---
----
+
 #### FILEZILLA
 
 Download Filezilla client for Mac/Windows
@@ -174,17 +161,10 @@ Download Filezilla client for Mac/Windows
 <img src="/assets/img/filezilla-3.png" alt="gui1" width="1200"/>
 
 
-
-
-
-
----
-
 <br>
 
 ---
 ## Introduction to HAWK
----
 ---
 
 - HAWK is Cardiff and Bangor universities High Performance Compute (HPC) system.
@@ -231,16 +211,11 @@ Command|Description|Common Options|Option Description
 `grep`|word search in a file||
 `chmod`|change permission of a file|`chmod +x`|makes file executable
 
----
-
 <br>
-
----
 
 
 ---
 ## Basic Unix Commands: pwd Command
----
 ---
 
 - When we first open a Unix shell, we are taken to the default directory.
@@ -259,11 +234,7 @@ pwd
 ```
 
 ---
-<br>
-
----
 ## Basic Unix Commands: ls Command
----
 ---
 
 - To explore the directory, we can use the `ls` command to list the contents of the Desktop directory:
@@ -325,7 +296,6 @@ drwxrwxr-x  9 c.mcbsd1 c.mcbsd1 4.0K Oct  4 11:22 Downloads
 ---
 ## Basic Unix Commands: cd Command
 ---
----
 
 - To move between different directories, we use the `cd` command.
 - In the example below,  we move into the Box-data directory.
@@ -386,7 +356,6 @@ drwxrwxr-x  9 c.mcbsd1 c.mcbsd1    4096 Oct  4 11:22 Downloads
 ---
 ## Basic Unix Commands: Making a directory
 ---
----
 
 - To make a directory, we can use the `mkdir` command.
 
@@ -412,7 +381,6 @@ mkdir directory1/directory1.1
 ---
 ## Basic Unix Commands: `touch` command
 ---
----
 
 - This is primarily used to create empty files.
 
@@ -429,7 +397,6 @@ touch new_file1.txt new_file2.txt new_file3.txt
 
 ---
 ## Basic Unix Commands: `mv` command
----
 ---
 
 - The `mv` command in unix is used to move or rename files and directories.
@@ -465,7 +432,6 @@ mv *.fastq dir-1/
 ---
 ## Basic Unix Commands: Copying a file using `cp` command
 ---
----
 
 - The copy command does what it says on the tin... Copies a file/directory from one place to another.
 
@@ -484,7 +450,6 @@ cp -r name-of-directory path/to/directory/
 
 ---
 ## Basic Unix Commands: Removing files and folders using `rm` command
----
 ---
 
 - This is used to remove files or directories. It is a powerful command, so it should be used **cautiously**, as deleted files and directories are typically **not recoverable**.
