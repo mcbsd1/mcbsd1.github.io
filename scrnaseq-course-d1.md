@@ -1,5 +1,5 @@
 ---
-title: "Single Cell RNAseq Data Processing & Analysing Course"
+title: "Single-cell RNAseq Analysis (Pilot course) - Using Nextflow pipeline and R scripting"
 author: "Sumukh Deshpande"
 #full-width: true
 ---
