@@ -25,25 +25,12 @@ We will cover:
 <br>
 
 ---
-## Course Introduction
----
----
-
-You should have one of three questions:
-
-- Have you found a nice bulk-RNAseq dataset from a paper and want to download and use it for your research?
-- Have you recently generated bulk-RNAseq data and need to process and analyse it?
-- You are planning a bulk-RNAseq experiment and would like to know how to process the data when the time comes?
-
----
-
-<br>
-
----
 ## What you will learn on this course:
 ---
 ---
 
+- Basic Unix commands
+- Working on HPC
 - Downloading scrnaseq datasets and genome files.
 - Setting up directory for the data processing and analysis.
 - How to run Nextflow pipeline on HPCs.
