@@ -35,10 +35,11 @@ cd cellranger_count_1k_mouse_kidney_CNIK_3pv3
 ```
 
 ---
-## Downloading data for analysis in Seurat
+## Downloading data for analysis in Seurat (for analysis on RStudio on local system)
 ---
 ---
 
+- You can skip this step if you are working on RStudio Server.
 - Once the counts are generated using nextflow pipeline, download the data onto your personal computer.
 - For this, you will need to use Filezilla to copy the files from remote onto your local machine.
 - Follow the steps below:
