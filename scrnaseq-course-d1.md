@@ -233,6 +233,8 @@ pwd
 /Users/sumukhdeshpande/Desktop
 ```
 
+<br>
+
 ---
 ## Basic Unix Commands: ls Command
 ---
@@ -353,6 +355,8 @@ drwxrwxr-x  9 c.mcbsd1 c.mcbsd1    4096 Oct  4 11:22 Downloads
 -rwx------  1 c.mcbsd1 c.mcbsd1 1691978 Sep 25  2019 featureCounts
 ```
 
+<br>
+
 ---
 ## Basic Unix Commands: Making a directory
 ---
@@ -378,6 +382,8 @@ mkdir directory1 directory2 directory3
 mkdir directory1/directory1.1
 ```
 
+<br>
+
 ---
 ## Basic Unix Commands: `touch` command
 ---
@@ -394,6 +400,8 @@ touch new_file.txt
 ```
 touch new_file1.txt new_file2.txt new_file3.txt
 ```
+
+<br>
 
 ---
 ## Basic Unix Commands: `mv` command
@@ -429,6 +437,8 @@ mv file* dir-1/
 mv *.fastq dir-1/
 ```
 
+<br>
+
 ---
 ## Basic Unix Commands: Copying a file using `cp` command
 ---
@@ -447,6 +457,8 @@ cp new_file2.txt /home/c.mcbsd1/Documents
 ```
 cp -r name-of-directory path/to/directory/
 ```
+
+<br>
 
 ---
 ## Basic Unix Commands: Removing files and folders using `rm` command
