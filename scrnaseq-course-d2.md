@@ -429,6 +429,7 @@ DimPlot(dat2UMAP, reduction = "umap")
 ---
 
 - In scRNA-seq experiments, doublets are artifactual libraries generated from two cells.
+- Doublets are defined when two or more cells are mistakenly treated as a single cell.
 - They typically arise due to errors in cell sorting or capture, especially in droplet-based protocols involving thousands of cells.
 - In this workshop, we will be using `DoubletFinder`.
 - It is a tool used to detect and remove doublets (artificially merged cells) in scRNA-seq data.
@@ -536,6 +537,9 @@ classificationsCol <- dat2UMAPDoublet@meta.data["DF.classifications_0.25_0.24_13
 dat2UMAPDoublet@meta.data[,"DF_hi.lo"] <- classificationsCol[1]
 
 ```
+
+- Now, construct a UMAP displaying the **Doublets** and **Singlets**.
+- You can also generate Violin plot displaying the same information. 
 
 <br>
 
