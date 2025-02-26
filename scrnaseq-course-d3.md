@@ -272,7 +272,7 @@ for (sample in samples) {
   seuratDoubletFinal@meta.data[,"DF_hi.lo"] <- classificationsCol[[1]]
   
   # Save the final object
-  saveRDS(seuratDoubletFinal, paste0("~/Desktop/Nextflow/scRNAseq_Workshop/Cancer_datasets/", sample, "FilteredDoublet.rds"))
+  saveRDS(seuratDoubletFinal, paste0("output/", sample, "FilteredDoublet.rds"))
   
   # Store the processed object dynamically in the environment
   assign(paste0(sample, "FilteredDoublet"), seuratDoubletFinal)
