@@ -24,9 +24,9 @@ navbar-links:
   scRNAseq Course:
     - Home: "scrnaseq-course-home"
     - Day 1: "scrnaseq-course-d1"
-    - Day 2: "scrnaseq-course-d22"
-    - Day 3: "scrnaseq-course-d33"
-    - Day 4: "scrnaseq-course-d44"
+    - Day 2: "scrnaseq-course-d2"
+    - Day 3: "scrnaseq-course-d3"
+    - Day 4: "scrnaseq-course-d4"
 
 ################
 # --- Logo --- #
