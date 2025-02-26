@@ -462,7 +462,7 @@ In this tutorial, I have chosen PC 20. Beyond this number, the variance seems to
 - We take first 20 PCs as an input in this case.
 
 ```
-allsamplesFN <- FindNeighbors(allsamplesPCA, reduction = "pca", dims = 1:20)
+allsamplesFN <- FindNeighbors(allsamplesPCA, reduction = "pca", dims = 1:25)
 allsamplesFC <- FindClusters(object = allsamplesFN)
 ```
 
@@ -474,7 +474,7 @@ allsamplesFC <- FindClusters(object = allsamplesFN)
 - Again, we use first 20 PCs.
 
 ```
-allsamplesUMAP <- RunUMAP(allsamplesFC, reduction = "pca", dims = 1:20, verbose = T)
+allsamplesUMAP <- RunUMAP(allsamplesFC, reduction = "pca", dims = 1:25, verbose = T)
 ```
 
 ---
